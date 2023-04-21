@@ -44,3 +44,23 @@ body {
         .add-contact form button {
             margin-top: 20px;
         }
+.field-validation-error{
+    font-weight:lighter;
+    font-size:18px;
+    color:red;
+}
+#btn-criar{
+    margin-bottom:15px;
+}
+.close-alert{
+    position: absolute;
+    right:-10px;
+    top:-15px;
+    border-radius:15px;
+    width:30px;
+    height:30px;
+
+}
+.alert{
+    text-align:center;
+}

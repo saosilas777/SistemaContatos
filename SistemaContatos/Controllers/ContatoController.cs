@@ -30,7 +30,7 @@ namespace SistemaContatos.Controllers
             return View(contato);
         }
         public IActionResult ApagarConfirmacao(Guid id)
-        {   
+        {
             var contato = _contatoRepository.BuscarPorId(id);
             return View(contato);
         }
@@ -44,21 +44,69 @@ namespace SistemaContatos.Controllers
         [HttpPost]
         public IActionResult Criar(ContatoModel contato)
         {
-            _contatoRepository.Adicionar(contato);
-            return RedirectToAction("Index", "Contato");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _contatoRepository.Adicionar(contato);
+                    TempData["SuccessMessage"] = "Contato cadastrado com sucesso";
+                    return RedirectToAction("Index", "Contato");
+
+                }
+                return View(contato);
+
+            }
+            catch (Exception e)
+            {
+                TempData["ErrorMessage"] = $"Não foi possível efetuar o cadastro, tente novamente! erro:{e.Message}";
+                return RedirectToAction("Index", "Contato");
+            }
         }
 
         [HttpPost]
         public IActionResult Editar(ContatoModel contato)
         {
-            _contatoRepository.Editar(contato);
-            return RedirectToAction("Index", "Contato");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _contatoRepository.Editar(contato);
+                    TempData["SuccessMessage"] = "Contato alterado com sucesso";
+                    return RedirectToAction("Index", "Contato");
+
+                }
+                return View(contato);
+
+            }
+            catch (Exception e)
+            {
+                TempData["ErrorMessage"] = $"Não foi possível efetuar o cadastro, tente novamente! erro:{e.Message}";
+                return RedirectToAction("Index", "Contato");
+            }
+
         }
         [HttpGet]
         public IActionResult Deletar(Guid id)
         {
-            _contatoRepository.Deletar(id);
-            return RedirectToAction("Index", "Contato");
+            try
+            {
+                bool result = _contatoRepository.Deletar(id);
+
+                if (result)
+                {
+                    TempData["SuccessMessage"] = "Contato apagado com sucesso";
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = "Não foi possível apagar o contato";
+                }
+                return RedirectToAction("Index", "Contato");    
+            }
+            catch (Exception e)
+            {
+                TempData["ErrorMessage"] = $"Não foi possível apagar o contato! erro:{e.Message}";
+                return RedirectToAction("Index", "Contato");
+            }
         }
 
 

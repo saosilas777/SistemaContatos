@@ -13,14 +13,17 @@
         <div class="form-group">
             <label for="name">Nome</label>
             <input type="text" asp-for="Name" class="form-control" id="name">
+            @Html.ValidationMessageFor(x => x.Name)
         </div>
         <div class="form-group">
             <label for="mail">Email</label>
             <input type="email" asp-for="Email" class="form-control" id="mail">
+            @Html.ValidationMessageFor(x => x.Email)
         </div>
         <div class="form-group">
             <label for="phone">Telefone</label>
             <input type="tel" asp-for="Phone" class="form-control" id="phone">
+            @Html.ValidationMessageFor(x => x.Phone)
         </div>
         <button type="reset" class="btn btn-secondary btn-block">Cancelar</button>
         <button type="submit" class="btn btn-primary btn-block">Enviar</button>
