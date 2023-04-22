@@ -1,4 +1,5 @@
-﻿@model List<ContatoModel>
+﻿@using SistemaContatos.Enums
+@model List<UserModel>
 @{
     ViewData["Title"] = "Lista de Contatos";
 }
@@ -8,7 +9,7 @@
     <p>E-mail: @Model.Email</p>
 </div>*@
 
-<a role="button" class="btn btn-primary" id="btn-criar" asp-action="Criar" asp-controller="Contato">Criar Contato</a>
+<a role="button" class="btn btn-primary" id="btn-criar" asp-action="Criar" asp-controller="User">Criar novo usuário</a>
 
 @if (TempData["SuccessMessage"] != null)
 {
@@ -29,13 +30,16 @@
 
 
 
-<table class="table table-striped" id="contato-table">
+<table class="table table-striped" id="users-table">
     <thead>
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Login</th>
             <th scope="col">Email</th>
-            <th scope="col">Telefone</th>
+            <th scope="col">Perfil</th>
+            <th scope="col">Data do cadastro</th>
             <th scope="col">Actions</th>
         </tr>
     </thead>
@@ -45,17 +49,20 @@
         {
 
 
-            @foreach (ContatoModel contato in Model)
+            @foreach (UserModel user in Model)
             {
                 <tr>
-                    <th scope="row">@contato.Id.ToString().Substring(0,8)</th>
-                    <td>@contato.Name</td>
-                    <td>@contato.Email</td>
-                    <td>@contato.Phone</td>
+                    <th scope="row">@user.Id.ToString().Substring(0,8)</th>
+                    <td>@user.FirstName</td>
+                    <td>@user.LastName</td>
+                    <td>@user.Login</td>
+                    <td>@user.Email</td>
+                    <td>@(user.Perfil == @PerfilEnum.admin ? "Administrador" : "Padrão") </td>
+                    <td>@user.RegistrationDate</td>
                     <td>
                         <div style="width:100%;" class="btn-group" role="group">
-                            <a asp-route-id="@contato.Id" asp-action="Editar" asp-controller="Contato" role="button" class="btn btn-primary">Edit</a>
-                            <a asp-route-id="@contato.Id" asp-action="ApagarConfirmacao" asp-controller="Contato" role="button" class="btn btn-danger">Delete</a>
+                            <a asp-route-id="@user.Id" asp-action="Editar" asp-controller="User" role="button" class="btn btn-primary">Edit</a>
+                            <a asp-route-id="@user.Id" asp-action="ApagarConfirmacao" asp-controller="User" role="button" class="btn btn-danger">Delete</a>
                         </div>
                     </td>
                 </tr>

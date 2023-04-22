@@ -49,18 +49,42 @@ body {
     font-size:18px;
     color:red;
 }
-#btn-criar{
-    margin-bottom:15px;
+#btn-criar {
+    margin-bottom: 15px;
 }
-.close-alert{
+.btn-cancel {
+    margin-top: 15px;
+    width:48%
+}
+.btn-back-cancel a {
+    margin-top: 20px;
+}
+#form-edit{
+    position:relative;
+}
+.btn-back {
     position: absolute;
-    right:-10px;
-    top:-15px;
-    border-radius:15px;
-    width:30px;
-    height:30px;
-
+    margin-top: 15px;
+    width: 48%;
+    right: 0;
+}
+.close-alert {
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
 }
 .alert{
     text-align:center;
+}
+.btn-back-cancel{
+    display:flex;
+}
+#users-table_length select {
+    background-color: #1f1f1f;
+}
+.select-dark option {
+    background-color: #1f1f1f;
 }

@@ -14,6 +14,7 @@ builder.Services.AddDbContext<Context>(options =>
 builder.Services.AddControllersWithViews();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IContatoRepository, ContatoRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/SistemaContatos.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/fontawesome/css/all.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/fontawesome/css/brands.min.css" asp-append-version="true" />
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -26,6 +27,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Contato" asp-action="Index"><i class="fa-solid fa-phone"></i> Contacts</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="User" asp-action="Index"><i class="fa-solid fa-user"></i> Users</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
@@ -48,6 +52,7 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

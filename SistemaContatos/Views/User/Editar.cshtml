@@ -1,0 +1,50 @@
+﻿@using SistemaContatos.Enums
+@model UserModel
+@{
+    ViewData["Title"] = "Editar Usuário";
+}
+
+<div class="add-contact">
+
+    <div>
+        <h1>@ViewData["Title"]</h1>
+    </div>
+
+    <form asp-action="Editar" asp-controller="User" method="post" id="form-edit">
+        <input asp-for="Id" hidden />
+        <input asp-for="Password" hidden />
+        <input asp-for="Login" hidden />
+       
+
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" asp-for="FirstName" class="form-control" id="name">
+            @Html.ValidationMessageFor(x => x.FirstName)
+        </div>
+        <div class="form-group">
+            <label for="lastname">Nome</label>
+            <input type="text" asp-for="LastName" class="form-control" id="lastname">
+            @Html.ValidationMessageFor(x => x.LastName)
+        </div>
+        <div class="form-group">
+            <label for="mail">Email</label>
+            <input type="email" asp-for="Email" class="form-control" id="mail">
+            @Html.ValidationMessageFor(x => x.Email)
+        </div>
+        <div class="form-group">
+            <label for="perfil">Perfil</label>
+            <select asp-for="Perfil" class="form-control select-dark">
+                <option value="">Selecione</option>
+                <option value="@PerfilEnum.admin">Administrador</option>
+                <option value="@PerfilEnum.padrao">Padrão</option>
+            </select>
+            @Html.ValidationMessageFor(x => x.Perfil)
+        </div>
+        <button type="submit" class="btn btn-primary col-md-12">Salvar</button>
+        <div class="btn-back-cancel">
+            <button type="reset" class="btn btn-secondary btn-cancel col-md-6">Cancelar</button>
+            <a role="button" asp-action="Index" asp-controller="User" class="btn btn-warning btn-back col-md-6">Voltar</a>
+        </div>
+        
+    </form>
+</div>

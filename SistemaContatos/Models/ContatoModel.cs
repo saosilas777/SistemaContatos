@@ -7,12 +7,12 @@ namespace SistemaContatos.Models
         
         public Guid Id { get; set; }
         
-        [Required(ErrorMessage = "Digite seu nome")]
+        [Required(ErrorMessage = "Digite um nome")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Digite seu email")]
+        [Required(ErrorMessage = "Digite um email")]
         [EmailAddress(ErrorMessage = "Email inválido!")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Digite seu telefone")]
+        [Required(ErrorMessage = "Digite um telefone")]
         [Phone(ErrorMessage = "Telefone inválido!")]
         public string Phone { get; set; }
     }

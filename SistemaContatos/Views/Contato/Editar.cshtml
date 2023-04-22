@@ -9,7 +9,7 @@
         <h1>@ViewData["Title"]</h1>
     </div>
 
-    <form asp-action="Editar" asp-controller="Contato" method="post">
+    <form asp-action="Editar" asp-controller="Contato" method="post" id="form-edit">
         <input asp-for="Id" hidden />
         <div class="form-group">
             <label for="name">Nome</label>
@@ -26,7 +26,11 @@
             <input type="tel" asp-for="Phone" class="form-control" id="phone">
             @Html.ValidationMessageFor(x => x.Phone)
         </div>
-        <button asp-action="Index" asp-controller="Contato" type="reset" class="btn btn-secondary btn-block">Cancelar</button>
-        <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+        <button type="submit" class="btn btn-primary col-md-12">Salvar</button>
+        <div class="btn-back-cancel">
+            <button type="reset" class="btn btn-secondary btn-cancel col-md-6">Cancelar</button>
+            <a role="button" asp-action="Index" asp-controller="Contato" class="btn btn-warning btn-back col-md-6">Voltar</a>
+        </div>
+        
     </form>
 </div>
