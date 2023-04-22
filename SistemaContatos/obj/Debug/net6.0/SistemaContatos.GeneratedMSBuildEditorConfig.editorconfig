@@ -8,77 +8,77 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SistemaContatos
 build_property.RootNamespace = SistemaContatos
-build_property.ProjectDir = Z:\SistemaContatos\SistemaContatos\SistemaContatos\
+build_property.ProjectDir = Z:\SistemaContatos\SistemaContatos\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = Z:\SistemaContatos\SistemaContatos\SistemaContatos
+build_property.MSBuildProjectDirectory = Z:\SistemaContatos\SistemaContatos
 build_property._RazorSourceGeneratorDebug = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/Contato/ApagarConfirmacao.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/Contato/ApagarConfirmacao.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xBcGFnYXJDb25maXJtYWNhby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/Contato/Criar.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/Contato/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xDcmlhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/Contato/Editar.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/Contato/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xFZGl0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/Contato/Index.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/Contato/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGF0b1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/Home/Index.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/Home/Privacy.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/Login/Login.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/Login/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/Shared/Error.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/Shared/_ValidationScriptsPartial.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/User/ApagarConfirmacao.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/User/ApagarConfirmacao.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBcGFnYXJDb25maXJtYWNhby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/User/Criar.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/User/Criar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmlhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/User/Editar.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/User/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/User/Index.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/_ViewImports.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/_ViewStart.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/Shared/_Layout.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-gbs2o0uq01
 
-[Z:/SistemaContatos/SistemaContatos/SistemaContatos/Views/Shared/_LayoutOffLine.cshtml]
+[Z:/SistemaContatos/SistemaContatos/Views/Shared/_LayoutOffLine.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRPZmZMaW5lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-bfwaxg6cci

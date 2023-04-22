@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zUtC/xdmzBHRqKoB4I2frCzyClZ0F9n0rx21lplULPeMTFxfJQacWUsx1qD4AvBHBpCTMlRSGU8+j5elK8SNlQ==",
+  "dgSpecHash": "VwruLc3HqYAkcdjV6YFdTNkxGpQZcCDAgbxw09qnftVKsH05a2wgBPOGo8+ir3BBUEMf5rPC0R5PyDggJqGHLA==",
   "success": true,
-  "projectFilePath": "Z:\\SistemaContatos\\SistemaContatos\\SistemaContatos\\SistemaContatos.csproj",
+  "projectFilePath": "Z:\\SistemaContatos\\SistemaContatos\\SistemaContatos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\saosi\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\saosi\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

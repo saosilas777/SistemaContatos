@@ -2975,11 +2975,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "Z:\\SistemaContatos\\SistemaContatos\\SistemaContatos\\SistemaContatos.csproj",
+      "projectUniqueName": "Z:\\SistemaContatos\\SistemaContatos\\SistemaContatos.csproj",
       "projectName": "SistemaContatos",
-      "projectPath": "Z:\\SistemaContatos\\SistemaContatos\\SistemaContatos\\SistemaContatos.csproj",
+      "projectPath": "Z:\\SistemaContatos\\SistemaContatos\\SistemaContatos.csproj",
       "packagesPath": "C:\\Users\\saosi\\.nuget\\packages\\",
-      "outputPath": "Z:\\SistemaContatos\\SistemaContatos\\SistemaContatos\\obj\\",
+      "outputPath": "Z:\\SistemaContatos\\SistemaContatos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

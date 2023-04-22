@@ -8,13 +8,13 @@
 <form asp-controller="Login" asp-action="Login" method="post">
     <div class="mb-3">
         <label for="login" class="form-label">Login</label>
-        <input type="text" asp-for="Login" class="form-control" id="login">
-        @Html.ValidationMessageFor(x => x.Login)
+        <input type="text" asp-for="_Login" class="form-control" id="login">
+        @Html.ValidationMessageFor(x => x._Login)
     </div>
     <div class="mb-3">
         <label for="senha" class="form-label">Senha</label>
-        <input type="password" asp-for="Password" class="form-control" id="senha">
-        @Html.ValidationMessageFor(x => x.Password)
+        <input type="password" asp-for="_Password" class="form-control" id="senha">
+        @Html.ValidationMessageFor(x => x._Password)
     </div>
 
    @* <p class="mb-4 text-sm mx-auto">

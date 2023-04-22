@@ -21,7 +21,7 @@ namespace SistemaContatos.Controllers
                 }
                 return View("Login", login);
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 TempData["ErrorMessage"] = $"Não foi possível efetuar seu login! erro:{e.Message}";
                 return RedirectToAction("Login", "Login");
