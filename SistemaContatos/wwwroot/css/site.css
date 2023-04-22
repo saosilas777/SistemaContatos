@@ -88,3 +88,26 @@ body {
 .select-dark option {
     background-color: #1f1f1f;
 }
+.login-container{
+    width:100%;
+    height:80vh;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.login-form {
+    position: absolute;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.login-form div{
+    margin:15px
+}
+.login-form button, .login-form input{
+    width:250px;
+}

@@ -23,7 +23,7 @@ namespace SistemaContatos.Controllers
         public IActionResult Criar()
         {
             return View();
-        }
+        } 
         public IActionResult Editar(Guid id)
         {
             ContatoModel contato = _contatoRepository.BuscarPorId(id);

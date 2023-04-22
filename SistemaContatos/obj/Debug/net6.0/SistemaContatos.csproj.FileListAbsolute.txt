@@ -74,6 +74,7 @@ Z:\SistemaContatos\SistemaContatos\SistemaContatos\obj\Debug\net6.0\SistemaConta
 Z:\SistemaContatos\SistemaContatos\SistemaContatos\obj\Debug\net6.0\staticwebassets.build.json
 Z:\SistemaContatos\SistemaContatos\SistemaContatos\obj\Debug\net6.0\staticwebassets.development.json
 Z:\SistemaContatos\SistemaContatos\SistemaContatos\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+Z:\SistemaContatos\SistemaContatos\SistemaContatos\obj\Debug\net6.0\scopedcss\Views\Shared\_LayoutOffLine.cshtml.rz.scp.css
 Z:\SistemaContatos\SistemaContatos\SistemaContatos\obj\Debug\net6.0\scopedcss\bundle\SistemaContatos.styles.css
 Z:\SistemaContatos\SistemaContatos\SistemaContatos\obj\Debug\net6.0\scopedcss\projectbundle\SistemaContatos.bundle.scp.css
 Z:\SistemaContatos\SistemaContatos\SistemaContatos\obj\Debug\net6.0\SistemaContatos.csproj.CopyComplete

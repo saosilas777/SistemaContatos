@@ -8,6 +8,7 @@ namespace SistemaContatos.Models
         public Guid Id { get; set; }
         
         [Required(ErrorMessage = "Digite um nome")]
+        [StringLength(10, MinimumLength = 3, ErrorMessage = "minimo 3")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Digite um email")]
         [EmailAddress(ErrorMessage = "Email inválido!")]
