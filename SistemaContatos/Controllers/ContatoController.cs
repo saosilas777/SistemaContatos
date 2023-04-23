@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SistemaContatos.Filters;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Models;
 using SistemaContatos.Repository;
 
 namespace SistemaContatos.Controllers
 {
-    public class ContatoController : Controller
+	[LoggedUser]
+	public class ContatoController : Controller
     {
         private readonly IContatoRepository _contatoRepository;
 

@@ -44,30 +44,37 @@ body {
         .add-contact form button {
             margin-top: 20px;
         }
-.field-validation-error{
-    font-weight:lighter;
-    font-size:18px;
-    color:red;
+
+.field-validation-error {
+    font-weight: lighter;
+    font-size: 18px;
+    color: red;
 }
+
 #btn-criar {
     margin-bottom: 15px;
 }
+
 .btn-cancel {
     margin-top: 15px;
-    width:48%
+    width: 48%
 }
+
 .btn-back-cancel a {
     margin-top: 20px;
 }
-#form-edit{
-    position:relative;
+
+#form-edit {
+    position: relative;
 }
+
 .btn-back {
     position: absolute;
     margin-top: 15px;
     width: 48%;
     right: 0;
 }
+
 .close-alert {
     position: absolute;
     right: -10px;
@@ -76,26 +83,32 @@ body {
     width: 30px;
     height: 30px;
 }
-.alert{
-    text-align:center;
+
+.alert {
+    text-align: center;
 }
-.btn-back-cancel{
-    display:flex;
+
+.btn-back-cancel {
+    display: flex;
 }
+
 #users-table_length select {
     background-color: #1f1f1f;
 }
+
 .select-dark option {
     background-color: #1f1f1f;
 }
+
 .login-container {
     position: relative;
     width: 100%;
-    height:50vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .login-form {
     position: absolute;
     display: flex;
@@ -105,6 +118,26 @@ body {
     right: auto;
 }
 
-.login-form button, .login-form input{
-    width:250px;
+    .login-form button, .login-form input {
+        width: 250px;
+    }
+
+#forgoten-password {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 10px 0;
 }
+    #forgoten-password .btn-fgt-bk {
+        margin-top:10px;
+        color:#000;
+    }
+
+    #forgoten-password a {
+        text-decoration: none;
+        color: #ffa400;
+        transition: all .5s;
+    }
+    #forgoten-password .RecoveryPassword:hover {
+        color: #fff;
+    }

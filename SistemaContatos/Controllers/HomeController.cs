@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SistemaContatos.Filters;
 using SistemaContatos.Models;
 using SistemaContatos.Models.ViewModels;
 using System.Diagnostics;
 
 namespace SistemaContatos.Controllers
 {
+    [LoggedUser]
     public class HomeController : Controller
     {
         

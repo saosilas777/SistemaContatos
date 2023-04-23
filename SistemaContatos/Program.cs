@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using SistemaContatos.Data;
+using SistemaContatos.Helper;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Repository;
 
@@ -15,6 +17,17 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IContatoRepository, ContatoRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddSingleton<ISection, Section>();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
+
+
+builder.Services.AddSession(obj =>
+{
+	obj.Cookie.HttpOnly = true;
+	obj.Cookie.IsEssential = true;
+});
+
 
 var app = builder.Build();
 
@@ -32,6 +45,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

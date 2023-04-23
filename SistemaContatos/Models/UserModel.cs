@@ -1,4 +1,5 @@
 ﻿using SistemaContatos.Enums;
+using SistemaContatos.Helper;
 using System.ComponentModel.DataAnnotations;
 
 namespace SistemaContatos.Models
@@ -23,8 +24,23 @@ namespace SistemaContatos.Models
 
         public bool SenhaValida(string pwd)
         {
-            return Password == pwd;
+            if(pwd == Password || Password == pwd.HashGeneration())
+            {
+                return true;
+            }
+            return false;
+        }
 
+        public void SetPwdHash()
+        {
+            Password = Password.HashGeneration();
+        }
+
+        public string PasswordGeneration()
+        {
+            string newPwd = Guid.NewGuid().ToString().Substring(0,8);
+            Password = newPwd.HashGeneration();
+            return newPwd;
         }
     }
 }

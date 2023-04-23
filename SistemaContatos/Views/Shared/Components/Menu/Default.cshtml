@@ -1,0 +1,31 @@
+﻿@using SistemaContatos.Enums
+@model UserModel
+
+
+<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bem vindo, @Model.FirstName</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+		aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+</button>
+<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+	<ul class="navbar-nav flex-grow-1">
+		<li class="nav-item">
+			<a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house"></i> Home</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-light" asp-area="" asp-controller="Contato" asp-action="Index"><i class="fa-solid fa-phone"></i> Contacts</a>
+		</li>
+		@if (Model.Perfil == @PerfilEnum.admin)
+		{
+			<li class="nav-item">
+				<a class="nav-link text-light" asp-area="" asp-controller="User" asp-action="Index"><i class="fa-solid fa-user"></i> Users</a>
+			</li>
+		}
+		<li class="nav-item">
+			<a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link text-light" asp-area="" asp-controller="Login" asp-action="Logout"><i class="fa-solid fa-door-open"></i> Logout</a>
+		</li>
+	</ul>
+</div>

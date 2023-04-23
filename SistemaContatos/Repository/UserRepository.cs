@@ -17,10 +17,16 @@ namespace SistemaContatos.Repository
 			return _context.Users.FirstOrDefault(u => u.Login.ToUpper() == login.ToUpper());
 		}
 
-        public UserModel Adicionar(UserModel user)
+		public UserModel BuscarPorEmaileLogin(string login, string email)
+		{
+			return _context.Users.FirstOrDefault(u => u.Login.ToUpper() == login.ToUpper() && u.Email.ToUpper() == email.ToUpper());
+		}
+
+		public UserModel Adicionar(UserModel user)
         {
             user.RegistrationDate = DateTime.Now;
             user.RegistrationUpdate = DateTime.Now;
+            user.SetPwdHash();
             _context.Add(user);
             _context.SaveChanges();
             return user;
@@ -57,7 +63,14 @@ namespace SistemaContatos.Repository
             userDb.LastName = user.LastName;
             userDb.Login = user.Login;
             userDb.Email = user.Email;
-            userDb.Password = userDb.Password;
+            if(user.Password != userDb.Password)
+            {
+                userDb.Password = user.Password;
+			}
+            else
+            {
+				userDb.Password = userDb.Password;
+			}
             userDb.Perfil = user.Perfil;
             userDb.RegistrationUpdate = DateTime.Now;            
    
@@ -66,5 +79,7 @@ namespace SistemaContatos.Repository
             return userDb;
 
         }
+
+        
     }
 }
