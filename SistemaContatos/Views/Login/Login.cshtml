@@ -1,26 +1,38 @@
 ﻿@model LoginModel
 @{
-    Layout = "_LayoutOffLine";
-    ViewData["Title"] = "Login";
+	Layout = "_LayoutOffLine";
+	ViewData["Title"] = "Login";
 }
 
+@if (TempData["ErrorMessage"] != null)
+{
+	<div class="alert alert-danger" role="alert">
+		<button type="button" class="btn btn-danger btn-sm close-alert" arial-lable="Close" hidden>X</button>
+		@TempData["ErrorMessage"]
+	</div>
 
-<form asp-controller="Login" asp-action="Login" method="post">
-    <div class="mb-3">
-        <label for="login" class="form-label">Login</label>
-        <input type="text" asp-for="_Login" class="form-control" id="login">
-        @Html.ValidationMessageFor(x => x._Login)
-    </div>
-    <div class="mb-3">
-        <label for="senha" class="form-label">Senha</label>
-        <input type="password" asp-for="_Password" class="form-control" id="senha">
-        @Html.ValidationMessageFor(x => x._Password)
-    </div>
+}
 
-   @* <p class="mb-4 text-sm mx-auto">
-        Esqueceu sua senha?
-        <a asp-action="RedefinirSenha" asp-controller="Login" class="text-primary text-gradient font-weight-bold">Redefinir minha senha</a>
-    </p>*@
+<div class="login-container">
+	<div class="login-form ">
+		<form asp-controller="Login" asp-action="Login" method="post">
+			<div class="mb-3">
+				<label for="login" class="form-label">Login</label>
+				<input type="text" asp-for="_Login" class="form-control" id="login">
+				@Html.ValidationMessageFor(x => x._Login)
+			</div>
+			<div class="mb-3">
+				<label for="senha" class="form-label">Senha</label>
+				<input type="password" asp-for="_Password" class="form-control" id="senha">
+				@Html.ValidationMessageFor(x => x._Password)
+			</div>
 
-    <button type="submit" class="btn btn-primary">Entrar</button>
-</form>
+			@* <p class="mb-4 text-sm mx-auto">
+			Esqueceu sua senha?
+			<a asp-action="RedefinirSenha" asp-controller="Login" class="text-primary text-gradient font-weight-bold">Redefinir minha senha</a>
+			</p>*@
+
+			<button type="submit" class="btn btn-primary">Entrar</button>
+		</form>
+	</div>
+</div>

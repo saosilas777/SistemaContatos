@@ -12,6 +12,10 @@ namespace SistemaContatos.Repository
         {
             _context = context;
         }
+		public UserModel BuscarPorLogin(string login)
+		{
+			return _context.Users.FirstOrDefault(u => u.Login.ToUpper() == login.ToUpper());
+		}
 
         public UserModel Adicionar(UserModel user)
         {
@@ -27,7 +31,8 @@ namespace SistemaContatos.Repository
             return _context.Users.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<UserModel> BuscarTodos()
+
+		public List<UserModel> BuscarTodos()
         {
             return _context.Users.ToList();
         }

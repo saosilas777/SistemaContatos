@@ -168,3 +168,8 @@ Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\scopedcss\projectbundle\Sist
 Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\SistemaContatos.csproj.CopyComplete
 Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\SistemaContatos.genruntimeconfig.cache
 Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\ref\SistemaContatos.dll
+Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\staticwebassets\msbuild.SistemaContatos.Microsoft.AspNetCore.StaticWebAssets.props
+Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\staticwebassets\msbuild.build.SistemaContatos.props
+Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.SistemaContatos.props
+Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.SistemaContatos.props
+Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\staticwebassets.pack.json

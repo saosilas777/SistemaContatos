@@ -21,5 +21,10 @@ namespace SistemaContatos.Models
         public DateTime RegistrationDate { get; set; }
         public DateTime? RegistrationUpdate { get; set; }
 
+        public bool SenhaValida(string pwd)
+        {
+            return Password == pwd;
+
+        }
     }
 }
