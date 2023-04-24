@@ -37,8 +37,14 @@ namespace SistemaContatos.Controllers
             var user = _userRepository.BuscarPorId(id);
             return View(user);
         }
+        public IActionResult PasswordUpdate(Guid id)
+        {
+            PasswordUpdateModel user = new PasswordUpdateModel();
+            user.Id = id;
+            return View(user);
+        }
 
-        [HttpPost]
+		[HttpPost]
         public IActionResult Apagar()
         {
             return View();
@@ -111,7 +117,34 @@ namespace SistemaContatos.Controllers
                 return RedirectToAction("Index", "User");
             }
         }
+		[HttpPost]
+		public IActionResult PasswordUpdate(PasswordUpdateModel pwd)
+		{
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (_userRepository.PasswordUpdate(pwd))
+                    {
+						TempData["SuccessMessage"] = "Senha alterada com sucesso!";
+						return RedirectToAction("Index", "User");
+
+					}
+					TempData["ErrorMessage"] = "Não foi possível alterar a senha, tente novamente!";
+					return RedirectToAction("PasswordUpdate", "User");
+				}
+				TempData["ErrorMessage"] = "Não foi possível alterar a senha, tente novamente!";
+				return RedirectToAction("PasswordUpdate", "User");
+			}
+            catch (Exception)
+            {
+
+				TempData["ErrorMessage"] = "Não foi possível alterar a senha, verifique os dados informados!";
+				return RedirectToAction("PasswordUpdate", "User");
+			}
+
+		}
 
 
-    }
+	}
 }

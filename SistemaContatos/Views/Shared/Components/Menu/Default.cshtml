@@ -25,6 +25,9 @@
 			<a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
 		</li>
 		<li class="nav-item">
+			<a class="nav-link text-light" asp-controller="User" asp-route-id="@Model.Id" asp-action="PasswordUpdate"><i class="fa-solid fa-key"></i> Change Password</a>
+		</li>
+		<li class="nav-item">
 			<a class="nav-link text-light" asp-area="" asp-controller="Login" asp-action="Logout"><i class="fa-solid fa-door-open"></i> Logout</a>
 		</li>
 	</ul>

@@ -1,4 +1,5 @@
 ﻿using SistemaContatos.Data;
+using SistemaContatos.Helper;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Models;
 
@@ -80,6 +81,19 @@ namespace SistemaContatos.Repository
 
         }
 
-        
+        public bool PasswordUpdate(PasswordUpdateModel pwd)
+        {
+            UserModel pwdDb = BuscarPorId(pwd.Id);
+            string result = pwd.PastPassword.HashGeneration();
+			if (result == pwdDb.Password)
+            {
+                pwdDb.Password = pwd.NewPassword.HashGeneration();
+				_context.Users.Update(pwdDb);
+                _context.SaveChanges();
+                return true;
+
+            }
+            return false;
+        }
     }
 }

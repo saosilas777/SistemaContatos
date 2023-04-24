@@ -11,6 +11,7 @@ namespace SistemaContatos.Interfaces
         UserModel BuscarPorId(Guid id);
         UserModel Editar(UserModel contato);
         bool Deletar(Guid id);
+        bool PasswordUpdate(PasswordUpdateModel pwd);
 
 
     }

@@ -141,3 +141,6 @@ body {
     #forgoten-password .RecoveryPassword:hover {
         color: #fff;
     }
+.small-tags{
+    color:red;
+}
