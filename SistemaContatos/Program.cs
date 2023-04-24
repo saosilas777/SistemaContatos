@@ -17,6 +17,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IContatoRepository, ContatoRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ISendEmail, SendEmail>();
 builder.Services.AddSingleton<ISection, Section>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();

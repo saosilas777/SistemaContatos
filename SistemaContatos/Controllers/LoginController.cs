@@ -9,11 +9,14 @@ namespace SistemaContatos.Controllers
 	{
 		private readonly IUserRepository _userRepository;
 		private readonly ISection _section;
+		private readonly ISendEmail _mail;
 
-		public LoginController(IUserRepository userRepository, ISection section)
+
+		public LoginController(IUserRepository userRepository, ISection section, ISendEmail mail)
 		{
 			_userRepository = userRepository;
 			_section = section;
+			_mail = mail;
 		}
 
 		public IActionResult Login()
@@ -73,13 +76,24 @@ namespace SistemaContatos.Controllers
 			{
 				if (ModelState.IsValid)
 				{
-					UserModel user = _userRepository.BuscarPorEmaileLogin(recoveryPassword.Login,recoveryPassword.Email);
+					UserModel user = _userRepository.BuscarPorEmaileLogin(recoveryPassword.Login, recoveryPassword.Email);
 					if (user != null)
 					{
 						string newPwd = user.PasswordGeneration();
-						_userRepository.Editar(user);
-						TempData["SuccessMessage"] = "Uma senha foi enviada no email cadastrado!";
-						return RedirectToAction("Login", "Login");
+						string message = $"Senha temporária é: {newPwd}";
+						bool sendmail = _mail.SendEmail(user.Email, "Sistema de Contatos - nova senha", message);
+						if (sendmail)
+						{
+							_userRepository.Editar(user);
+							TempData["SuccessMessage"] = "Uma senha foi enviada no email cadastrado!";
+							return RedirectToAction("Login", "Login");
+
+						}
+						else
+						{
+							TempData["ErrorMessage"] = "Não foi possível redefinir sua senha, verifique os dados informados!";
+							return RedirectToAction("RecoveryPassword", "Login");
+						}
 					}
 					TempData["ErrorMessage"] = "Não foi possível redefinir sua senha, verifique os dados informados!";
 					return RedirectToAction("RecoveryPassword", "Login");
