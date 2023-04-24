@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SistemaContatos.Filters;
+using SistemaContatos.Helper;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Models;
 using SistemaContatos.Repository;
@@ -10,22 +11,39 @@ namespace SistemaContatos.Controllers
 	public class ContatoController : Controller
     {
         private readonly IContatoRepository _contatoRepository;
+		private readonly ISection _section;
 
-        public ContatoController(IContatoRepository contatoRepository)
+		public ContatoController(IContatoRepository contatoRepository, ISection section)
         {
             _contatoRepository = contatoRepository;
+            _section = section;
         }
 
         public IActionResult Index()
         {
-            List<ContatoModel> contatos = _contatoRepository.BuscarTodos();
-            return View(contatos);
-        }
+			UserModel user = _section.GetUserSection();
+			List<ContatoModel> contatos = _contatoRepository.BuscarTodos();
+			List<ContatoModel> _contatos = new List<ContatoModel>();
+			foreach (var item in contatos)
+            {
+				if (item._UserId == user.Id)
+                { 
+                    _contatos.Add(item);
+					
+				}
+			}
+			return View(_contatos);
+		}
 
         public IActionResult Criar()
         {
-            return View();
-        } 
+            UserModel user = _section.GetUserSection();
+            ContatoModel contatoModel = new ContatoModel();
+			contatoModel._UserId = user.Id;
+			return View(contatoModel);
+
+
+		} 
         public IActionResult Editar(Guid id)
         {
             ContatoModel contato = _contatoRepository.BuscarPorId(id);

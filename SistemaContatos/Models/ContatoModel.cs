@@ -16,5 +16,6 @@ namespace SistemaContatos.Models
         [Required(ErrorMessage = "Digite um telefone")]
         [Phone(ErrorMessage = "Telefone inválido!")]
         public string Phone { get; set; }
+        public Guid _UserId { get; set; }
     }
 }
