@@ -1,4 +1,5 @@
-﻿using SistemaContatos.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SistemaContatos.Data;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Models;
 
@@ -25,9 +26,10 @@ namespace SistemaContatos.Repository
             return _context.Contato.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<ContatoModel> BuscarTodos()
+        public List<ContatoModel> BuscarTodos(Guid id)
         {
-            return _context.Contato.ToList();
+            return _context.Contato.Where(x => x.UserId == id).ToList();
+                
         }
 
         public bool Deletar(Guid id)

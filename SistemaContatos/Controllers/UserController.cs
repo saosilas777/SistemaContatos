@@ -11,10 +11,12 @@ namespace SistemaContatos.Controllers
 	public class UserController : Controller
     {
         private readonly IUserRepository _userRepository;
+        private readonly IContatoRepository _contatoRepository;
 
-        public UserController(IUserRepository userRepository)
+        public UserController(IUserRepository userRepository, IContatoRepository contatoRepository)
         {
             _userRepository = userRepository;
+            _contatoRepository = contatoRepository;
         }
 
         public IActionResult Index()
@@ -42,6 +44,13 @@ namespace SistemaContatos.Controllers
             PasswordUpdateModel user = new PasswordUpdateModel();
             user.Id = id;
             return View(user);
+        }
+
+        public IActionResult ListarContatosPorUsuarioId(Guid id)
+        {
+            List<ContatoModel> contatos = _contatoRepository.BuscarTodos(id);
+
+			return PartialView("_UserContacts",contatos);
         }
 
 		[HttpPost]

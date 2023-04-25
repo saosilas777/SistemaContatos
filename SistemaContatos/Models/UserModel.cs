@@ -23,6 +23,7 @@ namespace SistemaContatos.Models
         public PerfilEnum Perfil { get; set; }
         public DateTime RegistrationDate { get; set; }
         public DateTime? RegistrationUpdate { get; set; }
+		public virtual List<ContatoModel>? Contatos { get; set; }
 
         public bool SenhaValida(string pwd)
         {

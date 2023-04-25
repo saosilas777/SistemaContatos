@@ -1,4 +1,5 @@
-﻿using SistemaContatos.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SistemaContatos.Data;
 using SistemaContatos.Helper;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Models;
@@ -41,7 +42,10 @@ namespace SistemaContatos.Repository
 
 		public List<UserModel> BuscarTodos()
         {
-            return _context.Users.ToList();
+            
+            return _context.Users
+                .Include(x => x.Contatos)
+                .ToList();
         }
 
         public bool Deletar(Guid id)

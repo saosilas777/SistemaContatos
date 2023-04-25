@@ -22,24 +22,16 @@ namespace SistemaContatos.Controllers
         public IActionResult Index()
         {
 			UserModel user = _section.GetUserSection();
-			List<ContatoModel> contatos = _contatoRepository.BuscarTodos();
-			List<ContatoModel> _contatos = new List<ContatoModel>();
-			foreach (var item in contatos)
-            {
-				if (item._UserId == user.Id)
-                { 
-                    _contatos.Add(item);
-					
-				}
-			}
-			return View(_contatos);
+			List<ContatoModel> contatos = _contatoRepository.BuscarTodos(user.Id);
+			
+			return View(contatos);
 		}
 
         public IActionResult Criar()
         {
             UserModel user = _section.GetUserSection();
             ContatoModel contatoModel = new ContatoModel();
-			contatoModel._UserId = user.Id;
+			contatoModel.UserId = user.Id;
 			return View(contatoModel);
 
 
@@ -68,7 +60,9 @@ namespace SistemaContatos.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    _contatoRepository.Adicionar(contato);
+					UserModel user = _section.GetUserSection();
+                    contato.UserId = user.Id;
+					_contatoRepository.Adicionar(contato);
                     TempData["SuccessMessage"] = "Contato cadastrado com sucesso";
                     return RedirectToAction("Index", "Contato");
 
@@ -90,7 +84,9 @@ namespace SistemaContatos.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    _contatoRepository.Editar(contato);
+					UserModel user = _section.GetUserSection();
+					contato.UserId = user.Id;
+					_contatoRepository.Editar(contato);
                     TempData["SuccessMessage"] = "Contato alterado com sucesso";
                     return RedirectToAction("Index", "Contato");
 

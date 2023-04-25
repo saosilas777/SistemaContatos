@@ -12,8 +12,8 @@ using SistemaContatos.Data;
 namespace SistemaContatos.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230424195139_first")]
-    partial class first
+    [Migration("20230425131602_secondy")]
+    partial class secondy
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,10 +44,12 @@ namespace SistemaContatos.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("_UserId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Contato");
                 });
@@ -92,6 +94,22 @@ namespace SistemaContatos.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("SistemaContatos.Models.ContatoModel", b =>
+                {
+                    b.HasOne("SistemaContatos.Models.UserModel", "User")
+                        .WithMany("Contatos")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("SistemaContatos.Models.UserModel", b =>
+                {
+                    b.Navigation("Contatos");
                 });
 #pragma warning restore 612, 618
         }

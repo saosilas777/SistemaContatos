@@ -1,0 +1,29 @@
+﻿@model List<ContatoModel>
+
+<table class="table table-striped" id="contatoTableUser">
+	<thead>
+		<tr>
+			<th scope="col">Id</th>
+			<th scope="col">Nome</th>
+			<th scope="col">Email</th>
+			<th scope="col">Telefone</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model != null && Model.Any())
+		{
+			foreach (var user in Model)
+			{
+				<tr>
+					<th scope="row">@user.Id.ToString().Substring(0,6)</th>
+					<td>@user.Name</td>
+					<td>@user.Email</td>
+					<td>@user.Phone</td>
+				</tr>
+			}
+		}
+		
+		
+	</tbody>
+</table>

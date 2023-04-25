@@ -1,8 +1,27 @@
 ﻿$(document).ready(function () {
     getDataTable("#contato-table");
     getDataTable("#users-table");
-
-});
+    $('.btn-conctats').click(function () {
+        var userId = $(this).attr('user-id');
+        console.log(userId)
+        
+        $.ajax({
+            type: 'GET',
+            url: '/User/ListarContatosPorUsuarioId/' + userId,
+            success: function (result) {
+                $('#userContactList').html(result);
+                $('#ContactsModal').modal('show');
+                getDataTable('#contatoTableUser')
+            }
+        });
+        $('#btn-modal-close').click(function () {
+            $('#ContactsModal').modal('hide');
+        });
+    
+    
+    });
+    
+})
 
 
 
@@ -46,16 +65,15 @@ setTimeout(function () {
 $newPwd = document.getElementById('newPwd');
 $newPwdConfirm = document.getElementById('newPwdConfirm');
 
-setInterval(function(){
-    if ($newPwd.value != "") {
-        if ($newPwd.value === $newPwdConfirm.value && $newPwd.value.length > 5 ) {
-            $btnChangePwd = document.getElementById('btnChangePwd').disabled = false;
-        }
-        else {
-            $btnChangePwd = document.getElementById('btnChangePwd').disabled = true;
+    //setInterval(function(){
+//    if ($newPwd.value != "") {
+//        if ($newPwd.value === $newPwdConfirm.value && $newPwd.value.length > 5 ) {
+//            $btnChangePwd = document.getElementById('btnChangePwd').disabled = false;
+//        }
+//        else {
+//            $btnChangePwd = document.getElementById('btnChangePwd').disabled = true;
 
-        }
-    }
-   
-}, 2)
+//        }
+//    }
 
+//}, 2)

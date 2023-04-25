@@ -5,7 +5,7 @@ namespace SistemaContatos.Interfaces
     public interface IContatoRepository
     {
         ContatoModel Adicionar(ContatoModel contato);
-        List<ContatoModel> BuscarTodos();
+        List<ContatoModel> BuscarTodos(Guid id);
         ContatoModel BuscarPorId(Guid id);
         ContatoModel Editar(ContatoModel contato);
         bool Deletar(Guid id);

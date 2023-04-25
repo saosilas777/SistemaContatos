@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SistemaContatos.Data.Map;
 using SistemaContatos.Models;
 
 namespace SistemaContatos.Data
@@ -8,9 +9,14 @@ namespace SistemaContatos.Data
         public Context(DbContextOptions<Context> options) : base(options)
         {
         }
-
         public DbSet<ContatoModel> Contato { get; set; }
         public DbSet<UserModel> Users { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ContatoMap());
+            base.OnModelCreating(modelBuilder);
+        }
 
     }
 }

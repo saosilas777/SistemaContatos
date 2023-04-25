@@ -41,10 +41,12 @@ namespace SistemaContatos.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("_UserId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Contato");
                 });
@@ -89,6 +91,22 @@ namespace SistemaContatos.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("SistemaContatos.Models.ContatoModel", b =>
+                {
+                    b.HasOne("SistemaContatos.Models.UserModel", "User")
+                        .WithMany("Contatos")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("SistemaContatos.Models.UserModel", b =>
+                {
+                    b.Navigation("Contatos");
                 });
 #pragma warning restore 612, 618
         }
