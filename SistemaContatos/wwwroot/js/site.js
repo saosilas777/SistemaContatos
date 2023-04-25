@@ -65,9 +65,9 @@ setTimeout(function () {
 $newPwd = document.getElementById('newPwd');
 $newPwdConfirm = document.getElementById('newPwdConfirm');
 
-    //setInterval(function(){
+//    setInterval(function(){
 //    if ($newPwd.value != "") {
-//        if ($newPwd.value === $newPwdConfirm.value && $newPwd.value.length > 5 ) {
+//        if ($newPwd.value === $newPwdConfirm.value && $newPwd.value.length >= 5 ) {
 //            $btnChangePwd = document.getElementById('btnChangePwd').disabled = false;
 //        }
 //        else {

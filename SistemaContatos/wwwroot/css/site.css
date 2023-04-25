@@ -144,7 +144,7 @@ body {
 .small-tags{
     color:red;
 }
-.modal-content, .modal-content select option, .modal-content button {
+.modal-content, .modal-content select option, .modal-content button, .dataTables_length option {
     background-color: #1f1f1f;
 }
     .modal-content button {
@@ -154,3 +154,17 @@ body {
         border:none;
         font-size:25px;
     }
+#change-pwd-form{
+    margin:200px auto;
+}
+
+@media screen and (max-width:768px){
+
+    table th{
+        display:none
+    }
+    table td  {
+        display:flex;
+        flex-direction:column;
+    }
+}
