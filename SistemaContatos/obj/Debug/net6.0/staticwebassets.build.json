@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2fHFMBvKHUj8Zb2FIzMbW44OxNelPqBz0d9h05iYrIk=",
+  "Hash": "j10kmmEzYYZ1lL5H6ic5YRZMm5m5gjcprPonfU7IKAI=",
   "Source": "SistemaContatos",
   "BasePath": "_content/SistemaContatos",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "Z:\\SistemaContatos\\SistemaContatos\\wwwroot\\js\\changePassword.js",
+      "SourceId": "SistemaContatos",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\SistemaContatos\\SistemaContatos\\wwwroot\\",
+      "BasePath": "_content/SistemaContatos",
+      "RelativePath": "js/changePassword.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\changePassword.js"
     },
     {
       "Identity": "Z:\\SistemaContatos\\SistemaContatos\\wwwroot\\js\\site.js",

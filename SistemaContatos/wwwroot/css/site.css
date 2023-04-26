@@ -50,11 +50,6 @@ body {
     font-size: 18px;
     color: red;
 }
-
-#btn-criar {
-    margin-bottom: 15px;
-}
-
 .btn-cancel {
     margin-top: 15px;
     width: 48%
@@ -167,4 +162,17 @@ body {
         display:flex;
         flex-direction:column;
     }
+}
+.input-file{
+    display:flex;
+}
+.input-file-btn {
+    margin-top: 15px;
+    padding: 10px;
+}
+.envio-arquivos {
+    margin-top: 15px;
+}
+.excel{
+    text-transform:uppercase;
 }
