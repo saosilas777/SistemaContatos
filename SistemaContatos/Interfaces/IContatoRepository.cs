@@ -9,9 +9,6 @@ namespace SistemaContatos.Interfaces
         ContatoModel BuscarPorId(Guid id);
         ContatoModel Editar(ContatoModel contato);
         bool Deletar(Guid id);
-
-
-
-
-    }
+		List<ContatoModel> AdicionarTodos(List<ContatoModel> contatos);
+	}
 }

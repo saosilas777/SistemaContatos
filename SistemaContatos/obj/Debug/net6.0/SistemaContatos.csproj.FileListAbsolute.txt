@@ -168,3 +168,16 @@ Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\refint\SistemaContatos.dll
 Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\SistemaContatos.pdb
 Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\SistemaContatos.genruntimeconfig.cache
 Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\ref\SistemaContatos.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\EPPlus.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\EPPlus.Interfaces.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\EPPlus.System.Drawing.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\ClosedXML.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\DocumentFormat.OpenXml.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\ExcelNumberFormat.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Irony.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\SixLabors.Fonts.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\System.IO.Packaging.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\XLParser.dll

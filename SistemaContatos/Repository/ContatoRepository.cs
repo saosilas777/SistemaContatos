@@ -20,8 +20,15 @@ namespace SistemaContatos.Repository
             _context.SaveChanges();
             return contato;
         }
+		public List<ContatoModel> AdicionarTodos(List<ContatoModel> contatos)
+		{
+			_context.AddRange(contatos);
+			_context.SaveChanges();
+			return contatos;
+		}
 
-        public ContatoModel BuscarPorId(Guid id)
+
+		public ContatoModel BuscarPorId(Guid id)
         {
             return _context.Contato.FirstOrDefault(x => x.Id == id);
         }
