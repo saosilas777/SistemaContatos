@@ -60,20 +60,23 @@ function getDataTable(id) {
 
 setTimeout(function () {
     $(".alert").hide("hide");
-}, 3000);
+}, 5000);
 
 $newPwd = document.getElementById('newPwd');
 $newPwdConfirm = document.getElementById('newPwdConfirm');
+$newPwdConfirm.addEventListener('input', e => {
+    
+    var newPwdConfirm = e.target.value;
+    if (newPwdConfirm != "") {
+        
+        if (newPwdConfirm === $newPwd.value && $newPwdConfirm.value.length >= 5) {
+            $btnChangePwd = document.getElementById('btnChangePwd').disabled = false;
+        }
+        else {
+            $btnChangePwd = document.getElementById('btnChangePwd').disabled = true;
 
-//    setInterval(function(){
-//    if ($newPwd.value != "") {
-//        if ($newPwd.value === $newPwdConfirm.value && $newPwd.value.length >= 5 ) {
-//            $btnChangePwd = document.getElementById('btnChangePwd').disabled = false;
-//        }
-//        else {
-//            $btnChangePwd = document.getElementById('btnChangePwd').disabled = true;
+        }
+    }
+});
+    
 
-//        }
-//    }
-
-//}, 2)
