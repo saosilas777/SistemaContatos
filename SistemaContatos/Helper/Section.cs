@@ -15,7 +15,7 @@ namespace SistemaContatos.Helper
 
 		public UserModel GetUserSection()
 		{
-			string userSection = _httpContext.HttpContext.Session.GetString("UserLoged");
+			string userSection = _httpContext.HttpContext.Session.GetString("UserLogged");
 			if (string.IsNullOrEmpty(userSection)) return null;
 			return JsonConvert.DeserializeObject<UserModel>(userSection);
 		}
@@ -23,12 +23,12 @@ namespace SistemaContatos.Helper
 		public void UserSectionCreate(UserModel user)
 		{
 			string _user = JsonConvert.SerializeObject(user);
-			_httpContext.HttpContext.Session.SetString("UserLoged",_user);
+			_httpContext.HttpContext.Session.SetString("UserLogged", _user);
 		}
 
 		public void UserSectionRemove()
 		{
-			_httpContext.HttpContext.Session.Remove("UserLoged");
+			_httpContext.HttpContext.Session.Remove("UserLogged");
 		}
 	}
 }

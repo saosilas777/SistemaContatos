@@ -8,7 +8,7 @@ namespace SistemaContatos.ViewComponents
 	{
 		public async Task<IViewComponentResult> InvokeAsync()
 		{
-			string UserSection = HttpContext.Session.GetString("UserLoged");
+			string UserSection = HttpContext.Session.GetString("UserLogged");
 
 			if (string.IsNullOrEmpty(UserSection))
 			{

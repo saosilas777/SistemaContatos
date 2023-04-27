@@ -3,7 +3,6 @@ using SistemaContatos.Filters;
 using SistemaContatos.Helper;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Models;
-using SistemaContatos.Repository;
 
 namespace SistemaContatos.Controllers
 {
