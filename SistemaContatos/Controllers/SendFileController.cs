@@ -4,6 +4,7 @@ using OfficeOpenXml;
 using SistemaContatos.Helper;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Models;
+using SistemaContatos.Services.SendFileServices;
 using System.ComponentModel;
 using System.IO;
 using LicenseContext = System.ComponentModel.LicenseContext;
@@ -14,19 +15,19 @@ namespace SistemaContatos.Controllers
 	{
 		private readonly IContatoRepository _contatoRepository;
 		private readonly ISection _section;
+		private readonly SendFileServices _sendFileServices;
 
-		public SendFileController(IContatoRepository contatoRepository,ISection section)
+		public SendFileController(IContatoRepository contatoRepository,ISection section, SendFileServices sendFileServices )
 		{
 			_contatoRepository = contatoRepository;
 			_section = section;
+			_sendFileServices = sendFileServices;
 		}
 
 		[HttpPost]
 		public IActionResult SendFile(IFormFile uploadFile)
 		{
-			var streamFile = ReadStrem(uploadFile);
-			List<ContatoModel> contatos = ReadXls(streamFile);
-
+			List<ContatoModel> contatos = _sendFileServices.ReadXls(uploadFile);
 			_contatoRepository.AdicionarTodos(contatos);
 			return RedirectToAction("Index", "Contato");
 		}
@@ -36,45 +37,7 @@ namespace SistemaContatos.Controllers
 			return RedirectToAction("Index", "Home");
 		}
 
-		public List<ContatoModel> ReadXls(object streamFile)
-		{
-			UserModel user = _section.GetUserSection();
-			List<ContatoModel> response = new List<ContatoModel>();
-			ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;			
-
-			using (ExcelPackage package = new ExcelPackage((Stream)streamFile))
-			{
-				ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
-				int colCount = worksheet.Dimension.End.Column;
-				int rowCount = worksheet.Dimension.End.Row;
-
-				for (int row = 1; row < rowCount; row++)
-				{
-					var contato = new ContatoModel();
-					contato.Id = Guid.NewGuid();
-					contato.Name = worksheet.Cells[row, 1].Value.ToString();
-					contato.Email = worksheet.Cells[row, 2].Value.ToString();
-					contato.Phone = worksheet.Cells[row, 3].Value.ToString();
-					contato.UserId = user.Id;
-
-					response.Add(contato);
-				}
-			}
-			return response;
-
-		}
-
-		protected MemoryStream ReadStrem(IFormFile file)
-		{
-			using (var stream = new MemoryStream())
-			{
-
-				file?.CopyTo(stream);
-				var byteArray = stream.ToArray();
-				return new MemoryStream(byteArray);
-
-			}
-		}
+		
 
 	}
 }

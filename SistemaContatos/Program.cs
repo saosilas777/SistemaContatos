@@ -1,3 +1,4 @@
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -5,6 +6,7 @@ using SistemaContatos.Data;
 using SistemaContatos.Helper;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Repository;
+using SistemaContatos.Services.SendFileServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,7 @@ builder.Services.AddScoped<IContatoRepository, ContatoRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ISendEmail, SendEmail>();
 builder.Services.AddSingleton<ISection, Section>();
+builder.Services.AddScoped<SendFileServices>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
 
