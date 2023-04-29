@@ -67,8 +67,10 @@
 	<div class="envio-arquivos">
 		<span>Enviar arquivo <b class="excel">excel</b> de multiplos contatos: </span>
 		<form asp-action="SendFile" asp-controller="SendFile" method="post" enctype="multipart/form-data">
-			<input class="btn btn-primary input-file col-md-4" name="uploadFile" type="file" multiple />
-			<button class="btn btn-success col-md-4 input-file-btn " type="submit">Enviar</button>
+			<label for="btn-send-file" class="btn btn-primary input-file col-md-2 text-center">Procurar Arquivo</label>
+			<input id="btn-send-file" class="btn btn-success input-file col-md-2 text-center" name="uploadFile" type="file" multiple hidden />
+			<button class="btn btn-success col-md-2 input-file-btn" type="submit" >Enviar</button>
+			
 		</form>
 	@*<a role="button" class="btn btn-success"  asp-action="EnviarArquivo" asp-controller="EnviarArquivo">Buscar Arquivo</a>*@
 	</div>

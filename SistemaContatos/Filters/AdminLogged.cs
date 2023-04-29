@@ -11,7 +11,7 @@ namespace SistemaContatos.Filters
 		public override void OnActionExecuted(ActionExecutedContext context)
 		{
 			//mudar UserLoged para UserLogged
-			string userSection = context.HttpContext.Session.GetString("UserLoged");
+			string userSection = context.HttpContext.Session.GetString("UserLogged");
 			if (string.IsNullOrEmpty(userSection))
 			{
 				context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Login" }, { "action", "Login" } });
