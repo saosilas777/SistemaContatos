@@ -100,25 +100,23 @@ body {
 .small-tags {
     color: red;
 }
+#content-aside-text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.aside-content {
+    display: flex;
+    position: absolute;
+    width: 60%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #0000;
+}
 @media screen and (min-width:769px) {
-
-
-    .aside-content {
-        display: flex;
-        position: absolute;
-        width: 60%;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background-color: #0000;
-    }
-
-    #content-aside-text {
-        display:flex;
-        flex-direction:column;
-        width:50%;
-    }
+    
 
     .add-contact {
         width: 100%;
@@ -241,8 +239,13 @@ body {
     #content-aside-text h1 {
         margin-bottom: 50px;
     }
-
+    #toggle-login{
+        display:none;
+    }
     
+}
+.show {
+    display: flex;
 }
 
 @media screen and (max-width:768px) {
@@ -255,10 +258,36 @@ body {
         display: flex;
         flex-direction: column;
     }
-    #content-aside-text{
-        display:none;
+
+    .aside-content {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    .login-content{
-        width:100%
+
+    #content-aside-text {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
     }
+        #content-aside-text h1{
+            margin-bottom:50px;
+        }
+
+    #login-form{
+        display: none;
+        width: 100%
+    }
+    #toggle-login{
+        display:flex;
+        text-decoration: none;
+        color: #ffa400;
+    }
+    #toggle-login-back {
+        display: flex;
+        text-decoration: none;
+        color: white;
+    }
+    
 }

@@ -4,7 +4,7 @@
     $('.btn-conctats').click(function () {
         var userId = $(this).attr('user-id');
         console.log(userId)
-        
+
         $.ajax({
             type: 'GET',
             url: '/User/ListarContatosPorUsuarioId/' + userId,
@@ -17,10 +17,10 @@
         $('#btn-modal-close').click(function () {
             $('#ContactsModal').modal('hide');
         });
-    
-    
+
+
     });
-    
+
 })
 
 
@@ -62,3 +62,15 @@ setTimeout(function () {
     $(".alert").hide("hide");
 }, 5000);
 
+toggleLogin = document.getElementById('toggle-login');
+toggleLoginBack = document.getElementById('toggle-login-back');
+contentAsideText = document.getElementById('content-aside-text');
+loginForm = document.getElementById('login-form');
+toggleLogin.addEventListener('click', function () {
+    loginForm.style.display = 'flex'
+    contentAsideText.style.display = 'none'
+});
+toggleLoginBack.addEventListener('click', function () {
+    loginForm.style.display = 'none'
+    contentAsideText.style.display = 'flex'
+})
