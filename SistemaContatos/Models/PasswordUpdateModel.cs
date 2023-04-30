@@ -6,8 +6,8 @@ namespace SistemaContatos.Models
 	{
 		public Guid Id { get; set; }
 		[Required(ErrorMessage = "Digite uma Senha válida")]
-		public string PastPassword { get; set; }
+		public string? PastPassword { get; set; }
 		[Required(ErrorMessage = "Digite uma nova senha válida")]
-		public string NewPassword { get; set; }
+		public string? NewPassword { get; set; }
 	}
 }

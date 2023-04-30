@@ -36,8 +36,12 @@ namespace SistemaContatos.Repository
 
         public UserModel BuscarPorId(Guid id)
         {
-            return _context.Users.FirstOrDefault(x => x.Id == id);
-        }
+			UserModel? user = _context.Users.FirstOrDefault(x => x.Id == id);
+            if (user == null) return new UserModel();
+            return user;
+
+
+		}
 
 
 		public List<UserModel> BuscarTodos()

@@ -21,111 +21,66 @@ body {
     margin-bottom: 60px;
     background-color: #1f1f1f;
 }
-
-
-.add-contact {
+.login-container {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .login-form button, .login-form input {
+        width: 100%;
+        border: none;
+        color: white;
+        font-weight: normal;
+        background-color: #003968
+    }
+
+        .login-form input:focus, .login-form input:not(:empty), .login-form input:past, .login-form input::selection {
+            background-color: #0d4879;
+            color: white;
+            font-weight: normal;
+        }
+.login-content {
+    position: absolute;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #00192e
+}
+
+.content-recovery {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-    .add-contact form {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
+    .content-recovery h4 {
+        position: absolute;
+        top: 200px;
     }
-
-        .add-contact form label {
-            font-weight: bold;
-        }
-
-        .add-contact form button {
-            margin-top: 20px;
-        }
-
-.field-validation-error {
-    font-weight: lighter;
-    font-size: 18px;
-    color: red;
-}
-.btn-cancel {
-    margin-top: 15px;
-    width: 48%
-}
-
-.btn-back-cancel a {
-    margin-top: 20px;
-}
-
-#form-edit {
-    position: relative;
-}
-
-.btn-back {
-    position: absolute;
-    margin-top: 15px;
-    width: 48%;
-    right: 0;
-}
-
-.close-alert {
-    position: absolute;
-    right: -10px;
-    top: -15px;
-    border-radius: 15px;
-    width: 30px;
-    height: 30px;
-}
-
-.alert {
-    text-align: center;
-}
-
-.btn-back-cancel {
-    display: flex;
-}
-
-#users-table_length select {
-    background-color: #1f1f1f;
-}
-
-.select-dark option {
-    background-color: #1f1f1f;
-}
-
-.login-container {
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.login-form {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: 0;
-    right: auto;
-}
-
-    .login-form button, .login-form input {
-        width: 250px;
-    }
-
 #forgoten-password {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     margin: 10px 0;
 }
+
     #forgoten-password .btn-fgt-bk {
-        margin-top:10px;
-        color:#000;
+        margin-top: 10px;
+        color: #000;
     }
 
     #forgoten-password a {
@@ -133,46 +88,177 @@ body {
         color: #ffa400;
         transition: all .5s;
     }
+
     #forgoten-password .RecoveryPassword:hover {
         color: #fff;
     }
-.small-tags{
-    color:red;
-}
-.modal-content, .modal-content select option, .modal-content button, .dataTables_length option {
-    background-color: #1f1f1f;
-}
-    .modal-content button {
-        background-color: #1f1f1f;
+    footer {
+        width:100%;
+        background-color:#1f1f1f;
     }
-    .modal-content button{
-        border:none;
-        font-size:25px;
-    }
-#change-pwd-form{
-    margin:200px auto;
-}
 
-@media screen and (max-width:768px){
+.small-tags {
+    color: red;
+}
+@media screen and (min-width:769px) {
 
-    table th{
-        display:none
+
+    .aside-content {
+        display: flex;
+        position: absolute;
+        width: 60%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #0000;
     }
-    table td  {
+
+    #content-aside-text {
         display:flex;
         flex-direction:column;
+        width:50%;
     }
+
+    .add-contact {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .add-contact form {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .add-contact form label {
+                font-weight: bold;
+            }
+
+            .add-contact form button {
+                margin-top: 20px;
+            }
+
+    .field-validation-error {
+        font-weight: lighter;
+        font-size: 18px;
+        color: white;
+    }
+
+    .btn-cancel {
+        margin-top: 15px;
+        width: 48%
+    }
+
+    .btn-back-cancel a {
+        margin-top: 20px;
+    }
+
+    #form-edit {
+        position: relative;
+    }
+
+    .btn-back {
+        position: absolute;
+        margin-top: 15px;
+        width: 48%;
+        right: 0;
+    }
+
+    .close-alert {
+        position: absolute;
+        right: -10px;
+        top: -15px;
+        border-radius: 15px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .alert {
+        text-align: center;
+    }
+
+    .btn-back-cancel {
+        display: flex;
+    }
+
+    #users-table_length select {
+        background-color: #1f1f1f;
+    }
+
+    .select-dark option {
+        background-color: #1f1f1f;
+    }
+
+    
+
+    
+
+    
+
+    .modal-content, .modal-content select option, .modal-content button, .dataTables_length option {
+        background-color: #1f1f1f;
+    }
+
+        .modal-content button {
+            background-color: #1f1f1f;
+        }
+
+        .modal-content button {
+            border: none;
+            font-size: 25px;
+        }
+
+    #change-pwd-form {
+        margin: 200px auto;
+    }
+
+
+    .input-file {
+        display: flex;
+    }
+
+    .input-file-btn {
+        margin-top: 15px;
+        padding: 5px;
+    }
+
+    .envio-arquivos {
+        margin-top: 15px;
+    }
+
+    .excel {
+        text-transform: uppercase;
+    }
+
+    .content-body {
+        position: relative;
+        display: flex;
+    }
+    #content-aside-text h1 {
+        margin-bottom: 50px;
+    }
+
+    
 }
-.input-file{
-    display:flex;
-}
-.input-file-btn {
-    margin-top: 15px;
-    padding: 5px;
-}
-.envio-arquivos {
-    margin-top: 15px;
-}
-.excel{
-    text-transform:uppercase;
+
+@media screen and (max-width:768px) {
+
+    table th {
+        display: none
+    }
+
+    table td {
+        display: flex;
+        flex-direction: column;
+    }
+    #content-aside-text{
+        display:none;
+    }
+    .login-content{
+        width:100%
+    }
 }

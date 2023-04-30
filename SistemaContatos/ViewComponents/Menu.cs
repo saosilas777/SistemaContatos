@@ -8,14 +8,23 @@ namespace SistemaContatos.ViewComponents
 	{
 		public async Task<IViewComponentResult> InvokeAsync()
 		{
-			string UserSection = HttpContext.Session.GetString("UserLogged");
-
-			if (string.IsNullOrEmpty(UserSection))
+			try
 			{
-				return null;
+				string? UserSection = HttpContext.Session.GetString("UserLogged");
+
+				if (string.IsNullOrEmpty(UserSection))
+				{
+					return null;
+				}
+				UserModel? user = JsonConvert.DeserializeObject<UserModel>(UserSection);
+				return View(user);
 			}
-			UserModel user = JsonConvert.DeserializeObject<UserModel>(UserSection);
-			return View(user);
+			catch (Exception e)
+			{
+
+				throw new Exception(e.Message);
+			}
+			
 		}
 
 	}

@@ -15,7 +15,7 @@ namespace SistemaContatos.Helper
 
 		public UserModel GetUserSection()
 		{
-			string userSection = _httpContext.HttpContext.Session.GetString("UserLogged");
+			string? userSection = _httpContext.HttpContext.Session.GetString("UserLogged");
 			if (string.IsNullOrEmpty(userSection)) return null;
 			return JsonConvert.DeserializeObject<UserModel>(userSection);
 		}

@@ -9,16 +9,16 @@ namespace SistemaContatos.Models
         public Guid Id { get; set; }
         [Required(ErrorMessage = "Digite um nome")]
 		[StringLength(30, MinimumLength = 3, ErrorMessage = "minimo 3")]
-		public string FirstName { get; set; }
+		public string? FirstName { get; set; }
         [Required(ErrorMessage = "Digite um sobrenome")]
 		[StringLength(30, MinimumLength = 3, ErrorMessage = "minimo 3")]
-		public string LastName { get; set; }
+		public string? LastName { get; set; }
         [Required(ErrorMessage = "Digite um login")]
-        public string Login { get; set; }
+        public string? Login { get; set; }
         [Required(ErrorMessage = "Digite um email")]
-        public string Email { get; set; }
+        public string? Email { get; set; }
         [Required(ErrorMessage = "Digite uma senha")]
-        public string Password { get; set; }
+        public string? Password { get; set; }
         [Required(ErrorMessage = "Digite um perfil de usuário")]
         public PerfilEnum Perfil { get; set; }
         public DateTime RegistrationDate { get; set; }
@@ -36,7 +36,7 @@ namespace SistemaContatos.Models
 
         public void SetPwdHash()
         {
-            Password = Password.HashGeneration();
+            Password = Password?.HashGeneration();
         }
 
         public string PasswordGeneration()
