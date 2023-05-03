@@ -7,7 +7,8 @@ using SistemaContatos.Repository;
 namespace SistemaContatos.Controllers
 {
 	
-    [AdminLogged]
+   
+	[LoggedUser]
 	public class UserController : Controller
     {
         private readonly IUserRepository _userRepository;
@@ -18,35 +19,38 @@ namespace SistemaContatos.Controllers
             _userRepository = userRepository;
             _contatoRepository = contatoRepository;
         }
-
-        public IActionResult Index()
+		[AdminLogged]
+		public IActionResult Index()
         {
             List<UserModel> user = _userRepository.BuscarTodos();
             return View(user);
         }
-
-        public IActionResult Criar()
+		[AdminLogged]
+		public IActionResult Criar()
         {
             return View();
         }
-        public IActionResult Editar(Guid id)
+		[AdminLogged]
+		public IActionResult Editar(Guid id)
         {
             UserModel user = _userRepository.BuscarPorId(id);
             return View(user);
         }
-        public IActionResult ApagarConfirmacao(Guid id)
+		[AdminLogged]
+		public IActionResult ApagarConfirmacao(Guid id)
         {
             var user = _userRepository.BuscarPorId(id);
             return View(user);
         }
-        public IActionResult PasswordUpdate(Guid id)
+		
+		public IActionResult PasswordUpdate(Guid id)
         {
             PasswordUpdateModel user = new PasswordUpdateModel();
             user.Id = id;
             return View(user);
         }
-
-        public IActionResult ListarContatosPorUsuarioId(Guid id)
+		[AdminLogged]
+		public IActionResult ListarContatosPorUsuarioId(Guid id)
         {
             List<ContatoModel> contatos = _contatoRepository.BuscarTodos(id);
 
@@ -54,13 +58,15 @@ namespace SistemaContatos.Controllers
         }
 
 		[HttpPost]
-        public IActionResult Apagar()
+		[AdminLogged]
+		public IActionResult Apagar()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Criar(UserModel user)
+		[AdminLogged]
+		public IActionResult Criar(UserModel user)
         {
             try
             {
@@ -82,7 +88,8 @@ namespace SistemaContatos.Controllers
         }
 
         [HttpPost]
-        public IActionResult Editar(UserModel user)
+		[AdminLogged]
+		public IActionResult Editar(UserModel user)
         {
             try
             {
@@ -104,7 +111,8 @@ namespace SistemaContatos.Controllers
 
         }
         [HttpGet]
-        public IActionResult Deletar(Guid id)
+		[AdminLogged]
+		public IActionResult Deletar(Guid id)
         {
             try
             {
@@ -126,6 +134,7 @@ namespace SistemaContatos.Controllers
                 return RedirectToAction("Index", "User");
             }
         }
+
 		[HttpPost]
 		public IActionResult PasswordUpdate(PasswordUpdateModel pwd)
 		{

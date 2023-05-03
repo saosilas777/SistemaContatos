@@ -1,12 +1,17 @@
 using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using DocumentFormat.OpenXml.Wordprocessing;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.IdentityModel.Tokens;
 using SistemaContatos.Data;
 using SistemaContatos.Helper;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Repository;
+using SistemaContatos.Services;
 using SistemaContatos.Services.SendFileServices;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +29,26 @@ builder.Services.AddSingleton<ISection, Section>();
 builder.Services.AddScoped<SendFileServices>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddCors();
+var key = Encoding.ASCII.GetBytes(SettingsToken.Secret);
+
+builder.Services.AddAuthentication(x =>
+{
+	x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(x =>
+{
+    x.RequireHttpsMetadata = false;
+    x.SaveToken = true;
+    x.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = false,
+        ValidateAudience = false
+
+    };
+});
 
 
 builder.Services.AddSession(obj =>
@@ -48,8 +73,15 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseCors(x => x
+.AllowAnyOrigin()
+.AllowAnyMethod()
+.AllowAnyHeader());
+
+app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
+
 
 app.MapControllerRoute(
     name: "default",

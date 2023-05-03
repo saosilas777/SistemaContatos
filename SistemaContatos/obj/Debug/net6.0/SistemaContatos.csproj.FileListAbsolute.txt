@@ -181,3 +181,13 @@ Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Irony.dll
 Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\SixLabors.Fonts.dll
 Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\System.IO.Packaging.dll
 Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\XLParser.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Microsoft.Graph.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Microsoft.Graph.Core.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Microsoft.Kiota.Abstractions.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Microsoft.Kiota.Authentication.Azure.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Microsoft.Kiota.Http.HttpClientLibrary.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Microsoft.Kiota.Serialization.Form.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Microsoft.Kiota.Serialization.Json.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Microsoft.Kiota.Serialization.Text.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Tavis.UriTemplates.dll

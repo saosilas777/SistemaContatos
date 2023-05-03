@@ -1,7 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Graph;
+using Microsoft.Graph.Models;
 using SistemaContatos.Helper;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Models;
+using SistemaContatos.Services;
 
 namespace SistemaContatos.Controllers
 {
@@ -10,6 +15,7 @@ namespace SistemaContatos.Controllers
 		private readonly IUserRepository _userRepository;
 		private readonly ISection _section;
 		private readonly ISendEmail _mail;
+
 
 
 		public LoginController(IUserRepository userRepository, ISection section, ISendEmail mail)
@@ -21,10 +27,10 @@ namespace SistemaContatos.Controllers
 
 		public IActionResult Login()
 		{
-			if (_section.GetUserSection() != null)
-			{
-				return RedirectToAction("Index", "Home");
-			}
+			//if (_section.GetUserSection() != null)
+			//{
+				//return RedirectToAction("Index", "Home");
+			//}
 			return View();
 		}
 
@@ -42,15 +48,24 @@ namespace SistemaContatos.Controllers
 				if (ModelState.IsValid)
 				{
 					UserModel user = _userRepository.BuscarPorLogin(login._Login);
+
+
 					if (user != null)
 					{
-						if (user.SenhaValida(login._Password))
+						var authenticated = TokenService.Authenticate(user);
+						
+
+						if (authenticated.Result != null)
 						{
-							_section.UserSectionCreate(user);
-							return RedirectToAction("Index", "Home");
+							if (user.SenhaValida(login._Password))
+							{
+								if (!TokenService.TokenIsValid(authenticated.Result)) return RedirectToAction("Login", "Login");
+								_section.UserSectionCreate(user);
+								return RedirectToAction("Index", "Home");
+							}
+							TempData["ErrorMessage"] = "Senha inválida, tente novamente!";
+							return View("Login", login);
 						}
-						TempData["ErrorMessage"] = "Senha inválida, tente novamente!";
-						return View("Login", login);
 					}
 					TempData["ErrorMessage"] = "Usuário ou senha inválidos, tente novamente!";
 					return View("Login", login);
@@ -107,6 +122,6 @@ namespace SistemaContatos.Controllers
 			}
 
 		}
-		
+
 	}
 }
