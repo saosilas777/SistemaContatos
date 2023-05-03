@@ -1,4 +1,6 @@
-﻿$(document).ready(function () {
+﻿let count = 0;
+
+$(document).ready(function () {
     getDataTable("#contato-table");
     getDataTable("#users-table");
     $('.btn-conctats').click(function () {
@@ -20,8 +22,7 @@
 
 
     });
-
-})
+});
 
 
 
@@ -62,15 +63,17 @@ setTimeout(function () {
     $(".alert").hide("hide");
 }, 5000);
 
-toggleLogin = document.getElementById('toggle-login');
-toggleLoginBack = document.getElementById('toggle-login-back');
-contentAsideText = document.getElementById('content-aside-text');
-loginForm = document.getElementById('login-form');
-toggleLogin.addEventListener('click', function () {
-    loginForm.style.display = 'flex'
-    contentAsideText.style.display = 'none'
-});
-toggleLoginBack.addEventListener('click', function () {
-    loginForm.style.display = 'none'
-    contentAsideText.style.display = 'flex'
-})
+//toggleLogin = document.getElementById('toggle-login');
+//toggleLoginBack = document.getElementById('toggle-login-back');
+//contentAsideText = document.getElementById('content-aside-text');
+//loginForm = document.getElementById('login-form');
+//toggleLogin.addEventListener('click', chamaLogin);
+//function chamaLogin(){
+//    loginForm.style.display = 'flex'
+//    contentAsideText.style.display = 'none'
+//};
+
+//toggleLoginBack.addEventListener('click', function () {
+//    loginForm.style.display = 'none'
+//    contentAsideText.style.display = 'flex'
+//})

@@ -4,23 +4,15 @@
 	ViewData["Title"] = "Login";
 }
 
-@if (TempData["ErrorMessage"] != null)
-{
-	<div class="alert alert-danger" role="alert">
-		<button type="button" class="btn btn-danger btn-sm close-alert" arial-lable="Close" hidden>X</button>
-		@TempData["ErrorMessage"]
-	</div>
 
-}
-
-@if (TempData["SuccessMessage"] != null)
-{
-	<div class="alert alert-success" role="alert">
-		<button type="button" class="btn btn-danger btn-sm close-alert" arial-lable="Close" hidden>X</button>
-		@TempData["SuccessMessage"]
-	</div>
-
-}
+<div id="content-aside-text-login">
+	<h1>Intersec Solutions</h1>
+	<p>
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+		been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+		a galley of type and scrambled it to make a type specimen book.
+	</p>
+</div>
 
 <div class="login-container">
 	<div class="login-form">
@@ -38,8 +30,24 @@
 			<button type="submit" class="btn btn-primary">Entrar</button>
 			<div id="forgoten-password">
 				<a class="RecoveryPassword" asp-action="RecoveryPassword" asp-controller="Login">Esqueceu sua senha?</a>
-				<a style="color:white;margin-top:15px" id="toggle-login-back" href="#">Voltar</a>
 			</div>
 		</form>
 	</div>
 </div>
+@if (TempData["ErrorMessage"] != null)
+{
+	<div class="alert alert-danger" role="alert">
+		<button type="button" class="btn btn-danger btn-sm close-alert" arial-lable="Close" hidden>X</button>
+		@TempData["ErrorMessage"]
+	</div>
+
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+	<div class="alert alert-success" role="alert">
+		<button type="button" class="btn btn-danger btn-sm close-alert" arial-lable="Close" hidden>X</button>
+		@TempData["SuccessMessage"]
+	</div>
+
+}

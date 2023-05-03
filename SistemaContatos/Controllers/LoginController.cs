@@ -60,15 +60,15 @@ namespace SistemaContatos.Controllers
 							if (user.SenhaValida(login._Password))
 							{
 								if (!TokenService.TokenIsValid(authenticated.Result)) return RedirectToAction("Login", "Login");
-								_section.UserSectionCreate(user);
+								//_section.UserSectionCreate(user);
 								return RedirectToAction("Index", "Home");
 							}
 							TempData["ErrorMessage"] = "Senha inválida, tente novamente!";
-							return View("Login", login);
+							//return View("Login", login);
 						}
 					}
 					TempData["ErrorMessage"] = "Usuário ou senha inválidos, tente novamente!";
-					return View("Login", login);
+					//return View("Login", login);
 				}
 				return View("Login", login);
 			}
@@ -97,18 +97,14 @@ namespace SistemaContatos.Controllers
 						string newPwd = user.PasswordGeneration();
 						string message = $"Senha temporária é: {newPwd}";
 						bool sendmail = _mail.SendEmail(user.Email, "Sistema de Contatos - nova senha", message);
-						if (sendmail)
-						{
-							_userRepository.Editar(user);
-							TempData["SuccessMessage"] = "Uma senha foi enviada no email cadastrado!";
-							return RedirectToAction("Login", "Login");
-
-						}
-						else
+						if (!sendmail)
 						{
 							TempData["ErrorMessage"] = "Não foi possível redefinir sua senha, verifique os dados informados!";
 							return RedirectToAction("RecoveryPassword", "Login");
 						}
+						_userRepository.Editar(user);
+						TempData["SuccessMessage"] = "Uma senha foi enviada no email cadastrado!";
+						return RedirectToAction("Login", "Login");
 					}
 					TempData["ErrorMessage"] = "Não foi possível redefinir sua senha, verifique os dados informados!";
 					return RedirectToAction("RecoveryPassword", "Login");

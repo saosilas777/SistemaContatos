@@ -249,13 +249,19 @@ body {
 #toggle-login-back {
     display: none;
 }
+#content-aside-text-login{
+    display:none;
+}
 
 @media screen and (max-width:768px) {
-
     table th {
         display: none
     }
-
+    #content-aside-text-login {
+        display: flex;
+        flex-direction:column;
+        margin-bottom:30px;
+    }
     table td {
         display: flex;
         flex-direction: column;
@@ -263,22 +269,20 @@ body {
 
     .aside-content {
         width: 100%;
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
     }
 
     #content-aside-text {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
+        display:none;
     }
         #content-aside-text h1{
             margin-bottom:50px;
         }
 
     #login-form{
-        display: none;
+        display: flex;
         width: 100%
     }
     #toggle-login{
