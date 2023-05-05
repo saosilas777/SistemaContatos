@@ -83,14 +83,13 @@ Z:\SistemaContatos\SistemaContatos\SistemaContatos\obj\Debug\net6.0\refint\Siste
 Z:\SistemaContatos\SistemaContatos\SistemaContatos\obj\Debug\net6.0\SistemaContatos.pdb
 Z:\SistemaContatos\SistemaContatos\SistemaContatos\obj\Debug\net6.0\SistemaContatos.genruntimeconfig.cache
 Z:\SistemaContatos\SistemaContatos\SistemaContatos\obj\Debug\net6.0\ref\SistemaContatos.dll
+Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\SistemaContatos.dll
 Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\appsettings.Development.json
 Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\appsettings.json
 Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\SistemaContatos.staticwebassets.runtime.json
 Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\SistemaContatos.exe
 Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\SistemaContatos.deps.json
 Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\SistemaContatos.runtimeconfig.json
-Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\SistemaContatos.dll
-Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\SistemaContatos.pdb
 Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Azure.Core.dll
 Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\Azure.Identity.dll
 Z:\SistemaContatos\SistemaContatos\bin\Debug\net6.0\ClosedXML.dll
@@ -190,4 +189,3 @@ Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\SistemaContatos.dll
 Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\refint\SistemaContatos.dll
 Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\SistemaContatos.pdb
 Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\SistemaContatos.genruntimeconfig.cache
-Z:\SistemaContatos\SistemaContatos\obj\Debug\net6.0\ref\SistemaContatos.dll

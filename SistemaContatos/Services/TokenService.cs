@@ -27,7 +27,7 @@ namespace SistemaContatos.Services
 					new Claim(ClaimTypes.Role, user.Perfil.ToString()),
 
 				}),
-				Expires = DateTime.UtcNow.AddMinutes(60),
+				Expires = DateTime.UtcNow.AddMinutes(1),
 				SigningCredentials = new SigningCredentials(
 					new SymmetricSecurityKey(key),
 				SecurityAlgorithms.HmacSha256Signature)
