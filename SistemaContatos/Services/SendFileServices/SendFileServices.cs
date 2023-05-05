@@ -19,7 +19,8 @@ namespace SistemaContatos.Services.SendFileServices
 		{
 			var streamFile = ReadStrem(uploadFile);
 
-			UserModel user = _section.GetUserSection();
+			string token = _section.GetUserSection();
+			UserModel user = TokenService.GetDataInToken(token);
 			List<ContatoModel> response = new List<ContatoModel>();
 			ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
 
@@ -31,7 +32,7 @@ namespace SistemaContatos.Services.SendFileServices
 
 				for (int row = 2; row <= rowCount; row++)
 				{
-					var contato = new ContatoModel();
+					ContatoModel contato = new ContatoModel();
 					contato.Id = Guid.NewGuid();
 					contato.Name = worksheet.Cells[row, 1].Value.ToString();
 					contato.Email = worksheet.Cells[row, 2].Value.ToString();

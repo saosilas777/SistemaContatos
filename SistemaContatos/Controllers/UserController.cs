@@ -22,6 +22,7 @@ namespace SistemaContatos.Controllers
 		[AdminLogged]
 		public IActionResult Index()
         {
+
             List<UserModel> user = _userRepository.BuscarTodos();
             return View(user);
         }

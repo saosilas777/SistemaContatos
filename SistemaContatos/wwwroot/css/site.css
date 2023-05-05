@@ -18,6 +18,7 @@ html {
 }
 
 body {
+    min-height:100%;
     margin-bottom: 60px;
     background-color: #1f1f1f;
 }
@@ -50,9 +51,9 @@ body {
 .login-content {
     position: absolute;
     width: 40%;
+    min-height:100%;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     right: 0;
     display: flex;
     flex-direction: column;
@@ -60,7 +61,6 @@ body {
 }
 
 .content-recovery {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -92,31 +92,29 @@ body {
     #forgoten-password .RecoveryPassword:hover {
         color: #fff;
     }
-    footer {
-        position:static;
-        width:100%;
-        height:60px;
-        background-color:#1f1f1f;
-    }
+
 
 .small-tags {
     color: red;
 }
 #content-aside-text {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+    width: 60%;
 }
 .aside-content {
-    display: flex;
     position: absolute;
+    bottom: 0;
     width: 60%;
-    height: 100vh;
+    height:100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color: #0000;
 }
+.footer{
+    position:static;
+    background-color:#1f1f1f;
+}
+
 @media screen and (min-width:769px) {
     
 
@@ -235,7 +233,6 @@ body {
     }
 
     .content-body {
-        position: relative;
         display: flex;
     }
     #content-aside-text h1 {
@@ -253,7 +250,8 @@ body {
     display:none;
 }
 
-@media screen and (max-width:768px) {
+
+@media screen and (max-width:680px) {
     table th {
         display: none
     }
@@ -262,10 +260,18 @@ body {
         flex-direction:column;
         margin-bottom:30px;
     }
-    table td {
-        display: flex;
-        flex-direction: column;
+    .modal-header, .modal-body, .modal-header span,.modal-header button,.modal-body select option {
+        background-color: #1f1f1f;
     }
+        .modal-header button{
+            border:none;
+            font-size:24px;
+        }
+        table td{
+            display: flex;
+            flex-direction: column;
+            width: 90vw;
+        }
 
     .aside-content {
         width: 100%;
@@ -295,5 +301,7 @@ body {
         text-decoration: none;
         color: white;
     }
+    
+   
     
 }

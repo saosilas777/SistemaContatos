@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SistemaContatos.Models;
 using SistemaContatos.Enums;
+using SistemaContatos.Services;
 
 namespace SistemaContatos.Filters
 {
@@ -12,7 +13,7 @@ namespace SistemaContatos.Filters
 		{
 			try
 			{
-				string? userSection = context.HttpContext.Session.GetString("UserLogged");
+				string? userSection = context.HttpContext.Session.GetString("Token");
 				if (userSection != null)
 				{
 					base.OnActionExecuted(context);
@@ -25,7 +26,7 @@ namespace SistemaContatos.Filters
 				}
 				else
 				{
-					UserModel? user = JsonConvert.DeserializeObject<UserModel>(userSection);
+					UserModel? user = TokenService.GetDataInToken(userSection);
 					
 					if (user == null)
 					{

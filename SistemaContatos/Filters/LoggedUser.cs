@@ -10,19 +10,19 @@ namespace SistemaContatos.Filters
 		public override void OnActionExecuted(ActionExecutedContext context)
 		{
 			//mudar UserLoged para UserLogged
-			string? userSection = context.HttpContext.Session.GetString("UserLogged");
+			string? userSection = context.HttpContext.Session.GetString("Token");
 			if (string.IsNullOrEmpty(userSection))
 			{
 				context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Login" }, { "action", "Login" } });
 			}
-			else
-			{
-				UserModel? user = JsonConvert.DeserializeObject<UserModel>(userSection);
-				if (user == null)
-				{
-					context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Login" }, { "action", "Login" } });
-				}
-			}
+			//else
+			//{
+			//	UserModel? user = JsonConvert.DeserializeObject<UserModel>(userSection);
+			//	if (user == null)
+			//	{
+			//		context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Login" }, { "action", "Login" } });
+			//	}
+			//}
 			base.OnActionExecuted(context);
 		}
 	}

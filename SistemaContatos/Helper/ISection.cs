@@ -4,8 +4,8 @@ namespace SistemaContatos.Helper
 {
 	public interface ISection
 	{
-		void UserSectionCreate(UserModel user);
+		void UserSectionCreate(string token);
 		void UserSectionRemove();
-		UserModel GetUserSection();
+		string GetUserSection();
 	}
 }

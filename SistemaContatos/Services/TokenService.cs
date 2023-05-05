@@ -5,12 +5,14 @@ using System.Text;
 using SistemaContatos.Models;
 using Microsoft.IdentityModel.Tokens;
 using SistemaContatos.Interfaces;
+using Microsoft.Graph.Models;
+using SistemaContatos.Enums;
 
 namespace SistemaContatos.Services
 {
 	public static class TokenService
 	{
-		
+
 		public static string GenerateToken(UserModel user)
 		{
 			var tokenHandler = new JwtSecurityTokenHandler();
@@ -19,8 +21,11 @@ namespace SistemaContatos.Services
 			{
 				Subject = new ClaimsIdentity(new Claim[]
 				{
+					new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
 					new Claim(ClaimTypes.Name, user.FirstName.ToString()),
-					new Claim(ClaimTypes.Role, user.Perfil.ToString())
+					new Claim(ClaimTypes.Email, user.Email.ToString()),
+					new Claim(ClaimTypes.Role, user.Perfil.ToString()),
+
 				}),
 				Expires = DateTime.UtcNow.AddMinutes(60),
 				SigningCredentials = new SigningCredentials(
@@ -72,5 +77,41 @@ namespace SistemaContatos.Services
 
 			return true;
 		}
-	}
+
+		public static UserModel GetDataInToken(string token)
+		{
+			if (!TokenIsValid(token))
+				throw new Exception("Token is not valid.");
+
+			var tokenHandler = new JwtSecurityTokenHandler();
+			var securityToken = tokenHandler.ReadToken(token) as JwtSecurityToken;
+
+			Guid id = Guid.Parse(securityToken.Claims.First(x => x.Type == "nameid").Value);
+			string role = securityToken.Claims.First(x => x.Type == "role").Value;
+			string name = securityToken.Claims.First(x => x.Type == "unique_name").Value;
+			string email = securityToken.Claims.First(x => x.Type == "email").Value;
+			PerfilEnum _role;
+			if(role == "admin")
+			{
+				_role = PerfilEnum.admin;
+			}
+			else
+			{
+				_role = PerfilEnum.padrao;
+			}
+
+
+			UserModel tokenLinkConfigurationModel = new UserModel
+			{
+				Id = id,
+				FirstName = name,
+				Email = email,
+				Perfil = _role
+
+			};
+			
+
+			return tokenLinkConfigurationModel;
+		}
+}
 }

@@ -29,6 +29,7 @@ builder.Services.AddSingleton<ISection, Section>();
 builder.Services.AddScoped<SendFileServices>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
+
 builder.Services.AddCors();
 var key = Encoding.ASCII.GetBytes(SettingsToken.Secret);
 

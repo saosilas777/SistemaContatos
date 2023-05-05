@@ -3,6 +3,8 @@ using SistemaContatos.Filters;
 using SistemaContatos.Helper;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Models;
+using SistemaContatos.Services;
+using System.Collections.Generic;
 
 namespace SistemaContatos.Controllers
 {
@@ -20,7 +22,10 @@ namespace SistemaContatos.Controllers
 
         public IActionResult Index()
         {
-			UserModel user = _section.GetUserSection();
+			string token = _section.GetUserSection();
+
+			UserModel user = TokenService.GetDataInToken(token);
+            
 			List<ContatoModel> contatos = _contatoRepository.BuscarTodos(user.Id);
 			
 			return View(contatos);
@@ -28,21 +33,23 @@ namespace SistemaContatos.Controllers
 
         public IActionResult Criar()
         {
-            UserModel user = _section.GetUserSection();
-            ContatoModel contatoModel = new ContatoModel();
+            string token = _section.GetUserSection();
+            UserModel user = TokenService.GetDataInToken(token);
+			ContatoModel contatoModel = new ContatoModel();
 			contatoModel.UserId = user.Id;
 			return View(contatoModel);
 
 
 		} 
-        public IActionResult Editar(Guid id)
+        public IActionResult Editar(string token)
         {
-            ContatoModel contato = _contatoRepository.BuscarPorId(id);
+			UserModel user = TokenService.GetDataInToken(token);
+			ContatoModel contato = _contatoRepository.BuscarPorId(user.Id);
             return View(contato);
         }
         public IActionResult ApagarConfirmacao(Guid id)
         {
-            var contato = _contatoRepository.BuscarPorId(id);
+			var contato = _contatoRepository.BuscarPorId(id);
             return View(contato);
         }
 
@@ -59,8 +66,9 @@ namespace SistemaContatos.Controllers
             {
                 if (ModelState.IsValid)
                 {
-					UserModel user = _section.GetUserSection();
-                    contato.UserId = user.Id;
+					string token = _section.GetUserSection();
+					UserModel user = TokenService.GetDataInToken(token);
+					contato.UserId = user.Id;
 					_contatoRepository.Adicionar(contato);
                     TempData["SuccessMessage"] = "Contato cadastrado com sucesso";
                     return RedirectToAction("Index", "Contato");
@@ -83,7 +91,8 @@ namespace SistemaContatos.Controllers
             {
                 if (ModelState.IsValid)
                 {
-					UserModel user = _section.GetUserSection();
+					string token = _section.GetUserSection();
+					UserModel user = TokenService.GetDataInToken(token);
 					contato.UserId = user.Id;
 					_contatoRepository.Editar(contato);
                     TempData["SuccessMessage"] = "Contato alterado com sucesso";
@@ -105,7 +114,7 @@ namespace SistemaContatos.Controllers
         {
             try
             {
-                bool result = _contatoRepository.Deletar(id);
+				bool result = _contatoRepository.Deletar(id);
 
                 if (result)
                 {

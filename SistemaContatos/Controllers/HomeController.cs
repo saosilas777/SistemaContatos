@@ -16,9 +16,15 @@ namespace SistemaContatos.Controllers
     public class HomeController : Controller
     {
 		
-        public IActionResult Index()
+        public IActionResult Index(string token)
         {
-			return View();
+            
+            if (!TokenService.TokenIsValid(token))
+            {
+                return RedirectToAction("Login", "Login");
+            }
+            
+			return View(new { token = token });
         }
 
 		[Authorize(Roles = "admin")]

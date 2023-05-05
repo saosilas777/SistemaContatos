@@ -13,22 +13,22 @@ namespace SistemaContatos.Helper
 			_httpContext = httpContext;
 		}
 
-		public UserModel GetUserSection()
+		public string GetUserSection()
 		{
-			string? userSection = _httpContext.HttpContext.Session.GetString("UserLogged");
+			string? userSection = _httpContext.HttpContext.Session.GetString("Token");
 			if (string.IsNullOrEmpty(userSection)) return null;
-			return JsonConvert.DeserializeObject<UserModel>(userSection);
+			return userSection;
 		}
 
-		public void UserSectionCreate(UserModel user)
+		public void UserSectionCreate(string token)
 		{
-			string _user = JsonConvert.SerializeObject(user);
-			_httpContext.HttpContext.Session.SetString("UserLogged", _user);
+			//string _user = JsonConvert.SerializeObject(user);
+			_httpContext.HttpContext.Session.SetString("Token", token);
 		}
 
 		public void UserSectionRemove()
 		{
-			_httpContext.HttpContext.Session.Remove("UserLogged");
+			_httpContext.HttpContext.Session.Remove("Token");
 		}
 	}
 }

@@ -13,6 +13,7 @@ C:\Users\saosi\inetpub\sistemaContatos\EPPlus.Interfaces.dll
 C:\Users\saosi\inetpub\sistemaContatos\EPPlus.System.Drawing.dll
 C:\Users\saosi\inetpub\sistemaContatos\ExcelNumberFormat.dll
 C:\Users\saosi\inetpub\sistemaContatos\Irony.dll
+C:\Users\saosi\inetpub\sistemaContatos\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Data.SqlClient.dll
 C:\Users\saosi\inetpub\sistemaContatos\Microsoft.EntityFrameworkCore.dll
@@ -28,6 +29,8 @@ C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Extensions.Logging.dll
 C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Extensions.Options.dll
 C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Extensions.Primitives.dll
+C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Graph.dll
+C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Graph.Core.dll
 C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Identity.Client.dll
 C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\saosi\inetpub\sistemaContatos\Microsoft.IdentityModel.Abstractions.dll
@@ -37,6 +40,12 @@ C:\Users\saosi\inetpub\sistemaContatos\Microsoft.IdentityModel.Protocols.dll
 C:\Users\saosi\inetpub\sistemaContatos\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\saosi\inetpub\sistemaContatos\Microsoft.IdentityModel.Tokens.dll
 C:\Users\saosi\inetpub\sistemaContatos\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Kiota.Abstractions.dll
+C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Kiota.Authentication.Azure.dll
+C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Kiota.Http.HttpClientLibrary.dll
+C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Kiota.Serialization.Form.dll
+C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Kiota.Serialization.Json.dll
+C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Kiota.Serialization.Text.dll
 C:\Users\saosi\inetpub\sistemaContatos\Microsoft.SqlServer.Server.dll
 C:\Users\saosi\inetpub\sistemaContatos\Microsoft.Win32.SystemEvents.dll
 C:\Users\saosi\inetpub\sistemaContatos\Newtonsoft.Json.dll
@@ -54,6 +63,7 @@ C:\Users\saosi\inetpub\sistemaContatos\System.Security.Permissions.dll
 C:\Users\saosi\inetpub\sistemaContatos\System.Text.Encodings.Web.dll
 C:\Users\saosi\inetpub\sistemaContatos\System.Text.Json.dll
 C:\Users\saosi\inetpub\sistemaContatos\System.Windows.Extensions.dll
+C:\Users\saosi\inetpub\sistemaContatos\Tavis.UriTemplates.dll
 C:\Users\saosi\inetpub\sistemaContatos\XLParser.dll
 C:\Users\saosi\inetpub\sistemaContatos\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\saosi\inetpub\sistemaContatos\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
