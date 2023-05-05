@@ -27,11 +27,13 @@ namespace SistemaContatos.Controllers
 			_mail = mail;
 		}
 
-		public IActionResult Login()
+		public IActionResult Index()
 		{
-			if (_section.GetUserSection() != null)
+			string token = _section.GetUserSection();
+			if (TokenService.TokenIsValid(token))
 			{
 				return RedirectToAction("Index", "Home");
+
 			}
 			return View();
 		}
@@ -39,18 +41,19 @@ namespace SistemaContatos.Controllers
 		public IActionResult Logout()
 		{
 			_section.UserSectionRemove();
-			return RedirectToAction("Login", "Login");
+			return RedirectToAction("Index", "Login");
 		}
 
 		[HttpPost]
 		public IActionResult Login(LoginModel login)
 		{
+
 			try
 			{
 				if (ModelState.IsValid)
 				{
 					UserModel user = _userRepository.BuscarPorLogin(login._Login);
-					
+
 					var authenticated = TokenService.Authenticate(user);
 					if (user != null)
 					{
@@ -60,19 +63,19 @@ namespace SistemaContatos.Controllers
 							{
 								if (!TokenService.TokenIsValid(authenticated.Result)) return RedirectToAction("Login", "Login");
 								_section.UserSectionCreate(authenticated.Result);
-								return RedirectToAction("Index", "Home",new {token = authenticated.Result});
+								return RedirectToAction("Index", "Home", new { token = authenticated.Result });
 							}
 						}
 					}
 
 				}
 				TempData["ErrorMessage"] = "Usuário ou senha inválidos, tente novamente!";
-				return View("Login");
+				return View("Index");
 			}
 			catch (Exception e)
 			{
 				TempData["ErrorMessage"] = $"Não foi possível efetuar seu login! erro:{e.Message}";
-				return RedirectToAction("Login", "Login");
+				return RedirectToAction("Index", "Login");
 			}
 		}
 

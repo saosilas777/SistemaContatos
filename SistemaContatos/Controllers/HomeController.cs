@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Graph.Models;
 using Microsoft.IdentityModel.Tokens;
 using SistemaContatos.Filters;
+using SistemaContatos.Helper;
 using SistemaContatos.Models;
 using SistemaContatos.Models.ViewModels;
 using SistemaContatos.Services;
@@ -15,16 +16,22 @@ namespace SistemaContatos.Controllers
     [LoggedUser]
     public class HomeController : Controller
     {
-		
-        public IActionResult Index(string token)
+
+        private readonly ISection _section;
+
+        public HomeController(ISection section)
         {
-            
-            if (!TokenService.TokenIsValid(token))
+            _section = section;
+        }
+
+        public IActionResult Index()
+        {
+			string token = _section.GetUserSection();
+		if (!TokenService.TokenIsValid(token))
             {
-                return RedirectToAction("Login", "Login");
+                return RedirectToAction("Index", "Login");
             }
-            
-			return View(new { token = token });
+			return View();
         }
 
 		[Authorize(Roles = "admin")]
