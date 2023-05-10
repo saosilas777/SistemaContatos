@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "j10kmmEzYYZ1lL5H6ic5YRZMm5m5gjcprPonfU7IKAI=",
+  "Hash": "yhd9sq9fB2eyhl9cf/oMz8UuP3Fwvn1Yy1EvydSulIc=",
   "Source": "SistemaContatos",
   "BasePath": "_content/SistemaContatos",
   "Mode": "Default",
@@ -1341,6 +1341,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\fontawesome\\webfonts\\fa-v4compatibility.woff2"
+    },
+    {
+      "Identity": "Z:\\SistemaContatos\\SistemaContatos\\wwwroot\\lib\\images\\Intersec_name_2.svg",
+      "SourceId": "SistemaContatos",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\SistemaContatos\\SistemaContatos\\wwwroot\\",
+      "BasePath": "_content/SistemaContatos",
+      "RelativePath": "lib/images/Intersec_name_2.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\images\\Intersec_name_2.svg"
     },
     {
       "Identity": "Z:\\SistemaContatos\\SistemaContatos\\wwwroot\\lib\\jquery\\dist\\jquery.js",

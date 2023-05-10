@@ -7,7 +7,13 @@ html {
         font-size: 16px;
     }
 }
-
+.fa-puzzle-piece{
+    font-size:50px;
+}
+.img-intersec{
+    width:300px;
+    fill:white;
+}
 html {
     position: relative;
     min-height: 100%;
@@ -18,16 +24,18 @@ html {
 }
 
 body {
-    min-height:100%;
+    min-height: 100%;
     margin-bottom: 60px;
     background-color: #1f1f1f;
 }
+
 .login-container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .login-form {
     width: 100%;
     display: flex;
@@ -35,23 +43,36 @@ body {
     align-items: center;
 }
 
-    .login-form button, .login-form input {
+    .login-form input {
         width: 100%;
         border: none;
         color: white;
         font-weight: normal;
-        background-color: #003968
+        background-color: #FFF
+    }
+    .login-form button {
+        width: 100%;
+        padding:10px;
+        border: none;
+        color: white;
+        font-weight: normal;
+        background-color: #192840
+    }
+        .login-form button:hover {
+            background-color:#2d3e59
+        }
+    .login-form input:focus {
+        color: white;
+        font-weight: normal;
+        background-color:gainsboro;
+        box-shadow: 0 0 0 ;
+       
     }
 
-        .login-form input:focus, .login-form input:not(:empty), .login-form input:past, .login-form input::selection {
-            background-color: #0d4879;
-            color: white;
-            font-weight: normal;
-        }
 .login-content {
     position: absolute;
     width: 40%;
-    min-height:100%;
+    min-height: 100%;
     justify-content: center;
     align-items: center;
     right: 0;
@@ -71,6 +92,7 @@ body {
         position: absolute;
         top: 200px;
     }
+
 #forgoten-password {
     display: flex;
     flex-direction: column;
@@ -97,26 +119,29 @@ body {
 .small-tags {
     color: red;
 }
+
 #content-aside-text {
     width: 60%;
 }
+
 .aside-content {
     position: absolute;
     bottom: 0;
     width: 60%;
-    height:100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.footer{
-    position:static;
-    background-color:#1f1f1f;
+
+.footer {
+    position: static;
+    background-color: #1f1f1f;
 }
 
 @media screen and (min-width:769px) {
-    
+
 
     .add-contact {
         width: 100%;
@@ -191,11 +216,11 @@ body {
         background-color: #1f1f1f;
     }
 
-    
 
-    
 
-    
+
+
+
 
     .modal-content, .modal-content select option, .modal-content button, .dataTables_length option {
         background-color: #1f1f1f;
@@ -235,19 +260,22 @@ body {
     .content-body {
         display: flex;
     }
+
     #content-aside-text h1 {
         margin-bottom: 50px;
     }
-    #toggle-login{
-        display:none;
+
+    #toggle-login {
+        display: none;
     }
-    
 }
+
 #toggle-login-back {
     display: none;
 }
-#content-aside-text-login{
-    display:none;
+
+#content-aside-text-login {
+    display: none;
 }
 
 
@@ -255,23 +283,27 @@ body {
     table th {
         display: none
     }
+
     #content-aside-text-login {
         display: flex;
-        flex-direction:column;
-        margin-bottom:30px;
+        flex-direction: column;
+        margin-bottom: 30px;
     }
-    .modal-header, .modal-body, .modal-header span,.modal-header button,.modal-body select option {
+
+    .modal-header, .modal-body, .modal-header span, .modal-header button, .modal-body select option {
         background-color: #1f1f1f;
     }
-        .modal-header button{
-            border:none;
-            font-size:24px;
+
+        .modal-header button {
+            border: none;
+            font-size: 24px;
         }
-        table td{
-            display: flex;
-            flex-direction: column;
-            width: 90vw;
-        }
+
+    table td {
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+    }
 
     .aside-content {
         width: 100%;
@@ -281,27 +313,48 @@ body {
     }
 
     #content-aside-text {
-        display:none;
+        display: none;
     }
-        #content-aside-text h1{
-            margin-bottom:50px;
+
+        #content-aside-text h1 {
+            margin-bottom: 50px;
         }
 
-    #login-form{
+    #login-form {
         display: flex;
-        width: 100%
+        width: 100%;
     }
-    #toggle-login{
-        display:flex;
+
+        #login-form form {
+            width:100%;
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+        }
+            #login-form form div {
+                width: 80%;
+            }
+            #login-form form div input {
+                padding:10px;
+            }
+
+    #btn-login-entry {
+        padding:10px;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #toggle-login {
+        display: flex;
         text-decoration: none;
         color: #ffa400;
     }
+
     #toggle-login-back {
         display: flex;
         text-decoration: none;
         color: white;
     }
-    
-   
-    
 }

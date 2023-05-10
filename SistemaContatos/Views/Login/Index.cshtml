@@ -27,7 +27,7 @@
 				<input type="password" asp-for="_Password" class="form-control" id="senha">
 				@Html.ValidationMessageFor(x => x._Password)
 			</div>
-			<button type="submit" class="btn btn-primary">Entrar</button>
+			<button id="btn-login-entry" type="submit" class="btn btn-primary">Entrar</button>
 			<div id="forgoten-password">
 				<a class="RecoveryPassword" asp-action="RecoveryPassword" asp-controller="Login">Esqueceu sua senha?</a>
 			</div>
