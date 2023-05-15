@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace SistemaContatos.Controllers
 {
-	[LoggedUser]
+	//[LoggedUser]
 	public class ContatoController : Controller
     {
         private readonly IContatoRepository _contatoRepository;

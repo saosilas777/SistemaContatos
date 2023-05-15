@@ -3,7 +3,7 @@ using SistemaContatos.Filters;
 
 namespace SistemaContatos.Controllers
 {
-	[LoggedUser]
+	//[LoggedUser]
 	public class RestrictController : Controller
 	{
 		public IActionResult Index()

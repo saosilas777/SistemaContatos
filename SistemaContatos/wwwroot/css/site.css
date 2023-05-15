@@ -7,13 +7,16 @@ html {
         font-size: 16px;
     }
 }
-.fa-puzzle-piece{
-    font-size:50px;
+
+.fa-puzzle-piece {
+    font-size: 50px;
 }
-.img-intersec{
-    width:300px;
-    fill:white;
+
+.img-intersec {
+    width: 300px;
+    fill: white;
 }
+
 html {
     position: relative;
     min-height: 100%;
@@ -24,10 +27,12 @@ html {
 }
 
 body {
+    width: 100%;
     min-height: 100%;
     margin-bottom: 60px;
     background-color: #1f1f1f;
 }
+
 
 .login-container {
     width: 100%;
@@ -35,6 +40,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 
 .login-form {
     width: 100%;
@@ -50,23 +56,25 @@ body {
         font-weight: normal;
         background-color: #FFF
     }
+
     .login-form button {
         width: 100%;
-        padding:10px;
+        padding: 10px;
         border: none;
         color: white;
         font-weight: normal;
         background-color: #192840
     }
+
         .login-form button:hover {
-            background-color:#2d3e59
+            background-color: #2d3e59
         }
+
     .login-form input:focus {
         color: white;
         font-weight: normal;
-        background-color:gainsboro;
-        box-shadow: 0 0 0 ;
-       
+        background-color: gainsboro;
+        box-shadow: 0 0 0;
     }
 
 .login-content {
@@ -140,8 +148,58 @@ body {
     background-color: #1f1f1f;
 }
 
+#btn-criar {
+    margin-bottom: 15px;
+}
+#header-nav .nav-brand-text {
+    max-width: 150px;
+    text-decoration: none;
+    color: white;
+    padding: 12px;
+}
 @media screen and (min-width:769px) {
+    body {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        min-height: 100%;
+        margin-bottom: 60px;
+        background-color: #1f1f1f;
+    }
 
+    #header-nav {
+        width: 15%;
+        margin: 0;
+        padding: 0;
+        max-height: 100vh;
+    }
+
+        
+
+        #header-nav div {
+            height: 100vh;
+            width: 100%;
+        }
+
+            #header-nav div, #header-nav div ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+        #header-nav li {
+            justify-content: space-around;
+            padding: 20px;
+            max-width: 125px;
+        }
+
+    #body-content {
+        width: 85%;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+    }
 
     .add-contact {
         width: 100%;
@@ -326,21 +384,23 @@ body {
     }
 
         #login-form form {
-            width:100%;
-            display:flex;
-            flex-direction:column;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
         }
+
             #login-form form div {
                 width: 80%;
             }
-            #login-form form div input {
-                padding:10px;
-            }
+
+                #login-form form div input {
+                    padding: 10px;
+                }
 
     #btn-login-entry {
-        padding:10px;
+        padding: 10px;
         width: 50%;
         display: flex;
         justify-content: center;
