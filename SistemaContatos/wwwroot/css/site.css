@@ -1,36 +1,212 @@
-html {
-    font-size: 14px;
+* {
+    box-sizing: border-box;
 }
 
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
+html {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#content-body {
+    width: 100%;
+    height: 100vh;
+}
+
+#header-nav .nav-brand-text {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+#footer {
+    width: 100%;
+    position:absolute;
+    bottom:0;
+    background-color: #353535;
+    color: white;
+}
+
+@media screen and (min-width:576px) {
+    #content-body {
+        position: relative;
+        width: 100%;
+        max-height: 100vh;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #header-nav {
+        width: 15%;
+        height: 100%;
+        background-color: #353535;
+        margin: 0;
+        padding: 0;
+    }
+
+        #header-nav nav, #header-nav div {
+            height: 100%;
+            flex-direction: column;
+        }
+
+        #header-nav ul {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        #header-nav li {
+            width: 100%;
+        }
+
+            #header-nav li a {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+
+    #body-content {
+        min-width: 85%;
+        height: 100vh;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: #1f1f1f;
+        color: white;
+    }
+
+    .index-container img {
+        width: 25%
+    }
+
+    #footer {
+        width: 100%;
+        min-height: 5%;
+        display: flex;
+        padding: 15px;
+        flex-direction: row;
+        background-color: #353535;
+        color: white;
+    }
+    #content-aside-text-login{
+        display:none;
+    }
+    .aside-content {
+        position: absolute;
+        background-color: #353535;
+        color: white;
+        bottom: 0;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .index-container > p{
+        margin-bottom:100px;
+    }
+    .cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+        .cards div {
+            width: 33%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:flex-start;
+        }
+    .cards img{
+        width:100px;
+        margin-bottom:15px;
+    }
+    .cards p{
+        width:70%
     }
 }
 
-.fa-puzzle-piece {
-    font-size: 50px;
+@media screen and (max-width:575px) {
+
+    #content-body {
+        width: 100%;
+        min-height: fit-content;
+        position: relative;
+        background-color: #1f1f1f;
+        color: white;
+    }
+    #body-content {
+        min-width: 100%;
+        min-height:100vh;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: #1f1f1f;
+        color: white;
+    }
+
+
+    .index-container {
+        max-width: 100%;
+    }
+
+        .index-container img {
+            width: 100px;
+        }
+        .table tbody tr{
+            min-width:100%
+        }
+    .table{
+        min-width:90%;
+    }
+    .table thead {
+        display: none;
+    }
+    .table .odd{
+        background-color:#3c3c3c;
+    }
+    .table th, td, tr {
+        min-width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #users-table_wrapper {
+        min-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #footer {
+        width: 100%;
+        position: static;
+        padding:15px 0 15px 10px ;
+        color: white;
+    }
+    .aside-content{
+        display:none;
+    }
+    #login-form{
+        width:100vw;
+    }
 }
 
-.img-intersec {
-    width: 300px;
-    fill: white;
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-* {
-    color: #fff;
-}
-
-body {
-    width: 100%;
-    min-height: 100%;
-    margin-bottom: 60px;
-    background-color: #1f1f1f;
+.table, .table tbody, .table thead, .table tr, .table td, .table th {
+    color: white;
+    max-width: 90%;
 }
 
 
@@ -52,9 +228,13 @@ body {
     .login-form input {
         width: 100%;
         border: none;
-        color: white;
+        color: #000;
+        font-family: sans-serif;
+        font-size: 16px;
         font-weight: normal;
-        background-color: #FFF
+        letter-spacing: .5px;
+        background-color: #FFF;
+        box-sizing: border-box;
     }
 
     .login-form button {
@@ -70,13 +250,6 @@ body {
             background-color: #2d3e59
         }
 
-    .login-form input:focus {
-        color: white;
-        font-weight: normal;
-        background-color: gainsboro;
-        box-shadow: 0 0 0;
-    }
-
 .login-content {
     position: absolute;
     width: 40%;
@@ -86,7 +259,8 @@ body {
     right: 0;
     display: flex;
     flex-direction: column;
-    background-color: #00192e
+    background-color: #00192e;
+    color: white;
 }
 
 .content-recovery {
@@ -132,289 +306,3 @@ body {
     width: 60%;
 }
 
-.aside-content {
-    position: absolute;
-    bottom: 0;
-    width: 60%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer {
-    position: static;
-    background-color: #1f1f1f;
-}
-
-#btn-criar {
-    margin-bottom: 15px;
-}
-#header-nav .nav-brand-text {
-    max-width: 150px;
-    text-decoration: none;
-    color: white;
-    padding: 12px;
-}
-@media screen and (min-width:769px) {
-    body {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        min-height: 100%;
-        margin-bottom: 60px;
-        background-color: #1f1f1f;
-    }
-
-    #header-nav {
-        width: 15%;
-        margin: 0;
-        padding: 0;
-        max-height: 100vh;
-    }
-
-        
-
-        #header-nav div {
-            height: 100vh;
-            width: 100%;
-        }
-
-            #header-nav div, #header-nav div ul {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-
-        #header-nav li {
-            justify-content: space-around;
-            padding: 20px;
-            max-width: 125px;
-        }
-
-    #body-content {
-        width: 85%;
-        padding-top: 20px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .add-contact {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-        .add-contact form {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-        }
-
-            .add-contact form label {
-                font-weight: bold;
-            }
-
-            .add-contact form button {
-                margin-top: 20px;
-            }
-
-    .field-validation-error {
-        font-weight: lighter;
-        font-size: 18px;
-        color: white;
-    }
-
-    .btn-cancel {
-        margin-top: 15px;
-        width: 48%
-    }
-
-    .btn-back-cancel a {
-        margin-top: 20px;
-    }
-
-    #form-edit {
-        position: relative;
-    }
-
-    .btn-back {
-        position: absolute;
-        margin-top: 15px;
-        width: 48%;
-        right: 0;
-    }
-
-    .close-alert {
-        position: absolute;
-        right: -10px;
-        top: -15px;
-        border-radius: 15px;
-        width: 30px;
-        height: 30px;
-    }
-
-    .alert {
-        text-align: center;
-    }
-
-    .btn-back-cancel {
-        display: flex;
-    }
-
-    #users-table_length select {
-        background-color: #1f1f1f;
-    }
-
-    .select-dark option {
-        background-color: #1f1f1f;
-    }
-
-
-
-
-
-
-
-    .modal-content, .modal-content select option, .modal-content button, .dataTables_length option {
-        background-color: #1f1f1f;
-    }
-
-        .modal-content button {
-            background-color: #1f1f1f;
-        }
-
-        .modal-content button {
-            border: none;
-            font-size: 25px;
-        }
-
-    #change-pwd-form {
-        margin: 200px auto;
-    }
-
-
-    .input-file {
-        display: flex;
-    }
-
-    .input-file-btn {
-        margin-top: 15px;
-        padding: 5px;
-    }
-
-    .envio-arquivos {
-        margin-top: 15px;
-    }
-
-    .excel {
-        text-transform: uppercase;
-    }
-
-    .content-body {
-        display: flex;
-    }
-
-    #content-aside-text h1 {
-        margin-bottom: 50px;
-    }
-
-    #toggle-login {
-        display: none;
-    }
-}
-
-#toggle-login-back {
-    display: none;
-}
-
-#content-aside-text-login {
-    display: none;
-}
-
-
-@media screen and (max-width:680px) {
-    table th {
-        display: none
-    }
-
-    #content-aside-text-login {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 30px;
-    }
-
-    .modal-header, .modal-body, .modal-header span, .modal-header button, .modal-body select option {
-        background-color: #1f1f1f;
-    }
-
-        .modal-header button {
-            border: none;
-            font-size: 24px;
-        }
-
-    table td {
-        display: flex;
-        flex-direction: column;
-        width: 90vw;
-    }
-
-    .aside-content {
-        width: 100%;
-        display: none;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #content-aside-text {
-        display: none;
-    }
-
-        #content-aside-text h1 {
-            margin-bottom: 50px;
-        }
-
-    #login-form {
-        display: flex;
-        width: 100%;
-    }
-
-        #login-form form {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-            #login-form form div {
-                width: 80%;
-            }
-
-                #login-form form div input {
-                    padding: 10px;
-                }
-
-    #btn-login-entry {
-        padding: 10px;
-        width: 50%;
-        display: flex;
-        justify-content: center;
-    }
-
-    #toggle-login {
-        display: flex;
-        text-decoration: none;
-        color: #ffa400;
-    }
-
-    #toggle-login-back {
-        display: flex;
-        text-decoration: none;
-        color: white;
-    }
-}

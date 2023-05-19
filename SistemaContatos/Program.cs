@@ -18,7 +18,7 @@ var builder = WebApplication.CreateBuilder(args);
 string? conn = builder.Configuration.GetConnectionString(name: "DataBase");
 
 builder.Services.AddDbContext<Context>(options =>
-    options.UseSqlServer((conn) ?? throw new InvalidOperationException("Connection string 'SistemaContatos' not found.")));
+options.UseSqlServer((conn) ?? throw new InvalidOperationException("Connection string 'SistemaContatos' not found.")));
 //Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddControllers();

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yhd9sq9fB2eyhl9cf/oMz8UuP3Fwvn1Yy1EvydSulIc=",
+  "Hash": "jaon40M6qy+GvULIuflI4yswdW1e5QLj82cIhT6xS6U=",
   "Source": "SistemaContatos",
   "BasePath": "_content/SistemaContatos",
   "Mode": "Default",
@@ -1358,6 +1358,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\images\\Intersec_name_2.svg"
+    },
+    {
+      "Identity": "Z:\\SistemaContatos\\SistemaContatos\\wwwroot\\lib\\images\\person.png",
+      "SourceId": "SistemaContatos",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\SistemaContatos\\SistemaContatos\\wwwroot\\",
+      "BasePath": "_content/SistemaContatos",
+      "RelativePath": "lib/images/person.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\images\\person.png"
     },
     {
       "Identity": "Z:\\SistemaContatos\\SistemaContatos\\wwwroot\\lib\\jquery\\dist\\jquery.js",

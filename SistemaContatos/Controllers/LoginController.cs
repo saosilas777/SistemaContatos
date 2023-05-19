@@ -104,7 +104,7 @@ namespace SistemaContatos.Controllers
 						}
 						_userRepository.Editar(user);
 						TempData["SuccessMessage"] = "Uma senha foi enviada no email cadastrado!";
-						return RedirectToAction("Login", "Login");
+						return RedirectToAction("Index", "Login");
 					}
 					TempData["ErrorMessage"] = "Não foi possível redefinir sua senha, verifique os dados informados!";
 					return RedirectToAction("RecoveryPassword", "Login");
@@ -114,7 +114,7 @@ namespace SistemaContatos.Controllers
 			catch (Exception e)
 			{
 				TempData["ErrorMessage"] = $"Não foi possível redefinir sua senha,tente novamente! erro:{e.Message}";
-				return RedirectToAction("Login", "Login");
+				return RedirectToAction("RecoveryPassword", "Login");
 			}
 
 		}

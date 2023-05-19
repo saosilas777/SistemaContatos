@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7KpDyhAyflmnagZD5SLK38rRJiA8grYFoZ43EQyDb+s=",
+  "Hash": "JFLjYP73TPGeo5xp5ha0/sREo+MEH06slX76FJy07Uo=",
   "Source": "SistemaContatos",
   "BasePath": "_content/SistemaContatos",
   "Mode": "Default",
@@ -1341,6 +1341,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\fontawesome\\webfonts\\fa-v4compatibility.woff2"
+    },
+    {
+      "Identity": "Z:\\SistemaContatos\\SistemaContatos\\wwwroot\\lib\\images\\Intersec_name_2.svg",
+      "SourceId": "SistemaContatos",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\SistemaContatos\\SistemaContatos\\wwwroot\\",
+      "BasePath": "_content/SistemaContatos",
+      "RelativePath": "lib/images/Intersec_name_2.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\images\\Intersec_name_2.svg"
+    },
+    {
+      "Identity": "Z:\\SistemaContatos\\SistemaContatos\\wwwroot\\lib\\images\\person.png",
+      "SourceId": "SistemaContatos",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\SistemaContatos\\SistemaContatos\\wwwroot\\",
+      "BasePath": "_content/SistemaContatos",
+      "RelativePath": "lib/images/person.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\images\\person.png"
     },
     {
       "Identity": "Z:\\SistemaContatos\\SistemaContatos\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
