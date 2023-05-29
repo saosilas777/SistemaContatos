@@ -215,13 +215,25 @@ select, select option {
                 width: 50%;
                 margin: 10px 0 0;
             }
+    #logout-page{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        color:#ffa400;
+        
+    }
+    #logout-page a{
+        width:15%;
+        margin:5px;
+    }
 }
 
 @media screen and (max-width:575px) {
 
     #content-body {
         width: 100%;
-        min-height: fit-content;
+        height:100vh;
         position: relative;
         background-color: #1f1f1f;
         color: white;
@@ -229,8 +241,8 @@ select, select option {
 
     #body-content {
         min-width: 100%;
-        min-height: 100vh;
-        overflow: auto;
+        height:fit-content;
+        min-height:100%;
         display: flex;
         flex-direction: column;
         background-color: #1f1f1f;
@@ -302,6 +314,20 @@ select, select option {
     #login-form {
         width: 100vw;
     }
+    #logout-page {
+        margin-top: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #ffa400;
+    }
+
+        #logout-page a {
+            width: 50%;
+            margin: 5px;
+        }
 }
 
 .table, .table tbody, .table thead, .table tr, .table td, .table th {
