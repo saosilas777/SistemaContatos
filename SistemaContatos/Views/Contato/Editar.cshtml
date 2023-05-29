@@ -26,8 +26,8 @@
             <input type="tel" asp-for="Phone" class="form-control" id="phone">
             @Html.ValidationMessageFor(x => x.Phone)
         </div>
+        <div class="btns">
         <button type="submit" class="btn btn-primary col-md-12">Salvar</button>
-        <div class="btn-back-cancel">
             <button type="reset" class="btn btn-secondary btn-cancel col-md-6">Cancelar</button>
             <a role="button" asp-action="Index" asp-controller="Contato" class="btn btn-warning btn-back col-md-6">Voltar</a>
         </div>

@@ -41,8 +41,9 @@ namespace SistemaContatos.Controllers
 
 
 		} 
-        public IActionResult Editar(string token)
+        public IActionResult Editar()
         {
+			string token = _section.GetUserSection();
 			UserModel user = TokenService.GetDataInToken(token);
 			ContatoModel contato = _contatoRepository.BuscarPorId(user.Id);
             return View(contato);

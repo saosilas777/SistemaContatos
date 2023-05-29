@@ -37,6 +37,10 @@ namespace SistemaContatos.Controllers
 			}
 			return View();
 		}
+		public IActionResult LogoutConfirm()
+		{
+			return View();
+		}
 
 		public IActionResult Logout()
 		{

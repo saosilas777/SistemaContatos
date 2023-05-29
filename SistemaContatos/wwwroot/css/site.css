@@ -1,4 +1,4 @@
-* {
+﻿* {
     box-sizing: border-box;
 }
 
@@ -14,24 +14,61 @@ html {
     height: 100vh;
 }
 
+#header-index {
+    width: 100%;
+    background-color: #757575;
+    border-bottom: 2px solid #ccc;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
 #header-nav .nav-brand-text {
     text-decoration: none;
     color: white;
     font-weight: bold;
 }
 
+.cards img {
+    width: 100px;
+    margin-bottom: 15px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    outline: inset
+}
+
 #footer {
     width: 100%;
-    position:absolute;
-    bottom:0;
+    position: absolute;
+    bottom: 0;
     background-color: #353535;
     color: white;
 }
 
+select, select option {
+    background-color: #1f1f1f;
+    color: white;
+}
+
+.modal-content, .modal-content select option, .modal-content button, .dataTables_length option {
+    background-color: #1f1f1f;
+}
+
+    .modal-content button {
+        background-color: #1f1f1f;
+    }
+
+    .modal-content button {
+        border: none;
+        font-size: 25px;
+    }
+    main{
+        width:100%
+    }
+
 @media screen and (min-width:576px) {
     #content-body {
         position: relative;
-        width: 100%;
+        min-width: 100%;
         max-height: 100vh;
         display: flex;
         flex-direction: row;
@@ -76,18 +113,40 @@ html {
 
 
     #body-content {
-        min-width: 85%;
+        width: 85%;
         height: 100vh;
-        overflow: auto;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         background-color: #1f1f1f;
         color: white;
+        overflow: auto;
+    }
+        
+
+        
+
+
+    #users-table tr, #users-table th {
+        text-align: center;
     }
 
-    .index-container img {
-        width: 25%
+    #index-user #btn-criar {
+        width: 50%;
     }
+
+    #add-user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+        #add-user form {
+            width: 70%;
+        }
 
     #footer {
         width: 100%;
@@ -98,9 +157,11 @@ html {
         background-color: #353535;
         color: white;
     }
-    #content-aside-text-login{
-        display:none;
+
+    #content-aside-text-login {
+        display: none;
     }
+
     .aside-content {
         position: absolute;
         background-color: #353535;
@@ -113,29 +174,47 @@ html {
         justify-content: center;
         align-items: center;
     }
-    .index-container > p{
-        margin-bottom:100px;
+
+    .index-container > p {
+        margin-bottom: 100px;
     }
+
     .cards {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
     }
+
         .cards div {
             width: 33%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content:flex-start;
+            justify-content: flex-start;
         }
-    .cards img{
-        width:100px;
-        margin-bottom:15px;
+
+
+
+        .cards p {
+            width: 70%
+        }
+
+    .add-contact {
+        width: 100%;
     }
-    .cards p{
-        width:70%
-    }
+        .add-contact .btns {
+            min-width: 100%;
+            display: flex;
+            flex-direction:column;
+            justify-content: space-between;
+            
+
+        }
+            .add-contact .btns button, .add-contact .btns a {
+                width: 50%;
+                margin: 10px 0 0;
+            }
 }
 
 @media screen and (max-width:575px) {
@@ -147,9 +226,10 @@ html {
         background-color: #1f1f1f;
         color: white;
     }
+
     #body-content {
         min-width: 100%;
-        min-height:100vh;
+        min-height: 100vh;
         overflow: auto;
         display: flex;
         flex-direction: column;
@@ -165,48 +245,67 @@ html {
         .index-container img {
             width: 100px;
         }
-        .table tbody tr{
-            min-width:100%
-        }
-    .table{
-        min-width:90%;
-    }
-    .table thead {
-        display: none;
-    }
-    .table .odd{
-        background-color:#3c3c3c;
-    }
-    .table th, td, tr {
-        min-width: 90%;
+
+    #add-user {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        margin-top: 50px;
     }
+
+        #add-user form {
+            width: 80%;
+        }
+
+    .table tbody tr {
+        min-width: 100%
+    }
+
+    .table {
+        min-width: 90%;
+    }
+
+        .table thead {
+            display: none;
+        }
+
+        .table .odd {
+            background-color: #3c3c3c;
+        }
+
+        .table th, td, tr {
+            min-width: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
     #users-table_wrapper {
         min-width: 100%;
         margin: 0;
         padding: 0;
     }
+
     #footer {
         width: 100%;
         position: static;
-        padding:15px 0 15px 10px ;
+        padding: 15px 0 15px 10px;
         color: white;
     }
-    .aside-content{
-        display:none;
+
+    .aside-content {
+        display: none;
     }
-    #login-form{
-        width:100vw;
+
+    #login-form {
+        width: 100vw;
     }
 }
 
 .table, .table tbody, .table thead, .table tr, .table td, .table th {
     color: white;
-    max-width: 90%;
 }
 
 
@@ -305,4 +404,3 @@ html {
 #content-aside-text {
     width: 60%;
 }
-

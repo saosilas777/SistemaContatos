@@ -7,12 +7,12 @@ using Microsoft.IdentityModel.Tokens;
 using SistemaContatos.Interfaces;
 using Microsoft.Graph.Models;
 using SistemaContatos.Enums;
+using SistemaContatos.Helper;
 
 namespace SistemaContatos.Services
 {
 	public static class TokenService
 	{
-		
 		public static string GenerateToken(UserModel user)
 		{
 			var tokenHandler = new JwtSecurityTokenHandler();

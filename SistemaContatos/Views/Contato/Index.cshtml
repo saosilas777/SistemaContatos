@@ -4,74 +4,75 @@
 }
 
 
+<div id="index-contatos">
+
+
+	@if (TempData["SuccessMessage"] != null)
+	{
+		<div class="alert alert-success" role="alert">
+			<button type="button" class="btn btn-danger btn-sm close-alert" arial-lable="Close" hidden>X</button>
+			@TempData["SuccessMessage"]
+		</div>
+
+	}
+	@if (TempData["ErrorMessage"] != null)
+	{
+		<div class="alert alert-danger" role="alert">
+			<button type="button" class="btn btn-danger btn-sm close-alert" arial-lable="Close" hidden>X</button>
+			@TempData["ErrorMessage"]
+		</div>
+
+	}
 
 
 
-@if (TempData["SuccessMessage"] != null)
-{
-	<div class="alert alert-success" role="alert">
-		<button type="button" class="btn btn-danger btn-sm close-alert" arial-lable="Close" hidden>X</button>
-		@TempData["SuccessMessage"]
-	</div>
+	<table class="table table-striped" id="contato-table">
+		<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Email</th>
+				<th scope="col">Telefone</th>
+				<th scope="col">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
 
-}
-@if (TempData["ErrorMessage"] != null)
-{
-	<div class="alert alert-danger" role="alert">
-		<button type="button" class="btn btn-danger btn-sm close-alert" arial-lable="Close" hidden>X</button>
-		@TempData["ErrorMessage"]
-	</div>
-
-}
-
-
-
-<table class="table table-striped" id="contato-table">
-	<thead>
-		<tr>
-			<th scope="col">Id</th>
-			<th scope="col">Nome</th>
-			<th scope="col">Email</th>
-			<th scope="col">Telefone</th>
-			<th scope="col">Actions</th>
-		</tr>
-	</thead>
-	<tbody>
-
-		@if (@Model != null && @Model.Any())
-		{
-
-
-			@foreach (ContatoModel contato in Model)
+			@if (@Model != null && @Model.Any())
 			{
-				<tr>
-					<th scope="row">@contato.Id.ToString().Substring(0,8)</th>
-					<td>@contato.Name</td>
-					<td>@contato.Email</td>
-					<td>@contato.Phone</td>
-					<td>
-						<div style="width:100%;" class="btn-group" role="group">
-							<a asp-route-id="@contato.Id" asp-action="Editar" asp-controller="Contato" role="button" class="btn btn-primary">Edit</a>
-							<a asp-route-id="@contato.Id" asp-action="ApagarConfirmacao" asp-controller="Contato" role="button" class="btn btn-danger">Delete</a>
-						</div>
-					</td>
-				</tr>
-			}
-		}
-		
 
-	</tbody>
-</table>
-<div class="container-buttons">
-	<a role="button" class="btn btn-primary" id="btn-criar" asp-action="Criar" asp-controller="Contato">Criar Contato único</a>
-	<div class="envio-arquivos">
-		<span>Enviar arquivo <b class="excel">excel</b> de multiplos contatos: </span>
-		<form asp-action="SendFile" asp-controller="SendFile" method="post" enctype="multipart/form-data">
-			<label for="btn-send-file" class="btn btn-primary input-file col-md-2 text-center">Procurar Arquivo</label>
-			<input id="btn-send-file" class="btn btn-success input-file col-md-2 text-center" name="uploadFile" type="file" multiple hidden />
-			<button class="btn btn-success col-md-2 input-file-btn" type="submit" >Enviar</button>
-			
-		</form>
-	@*<a role="button" class="btn btn-success"  asp-action="EnviarArquivo" asp-controller="EnviarArquivo">Buscar Arquivo</a>*@
+
+				@foreach (ContatoModel contato in Model)
+				{
+					<tr>
+						<th scope="row">@contato.Id.ToString().Substring(0,8)</th>
+						<td>@contato.Name</td>
+						<td>@contato.Email</td>
+						<td>@contato.Phone</td>
+						<td>
+							<div style="width:100%;" class="btn-group" role="group">
+								<a asp-route-id="@contato.Id" asp-action="Editar" asp-controller="Contato" role="button" class="btn btn-primary">Edit</a>
+								<a asp-route-id="@contato.Id" asp-action="ApagarConfirmacao" asp-controller="Contato" role="button" class="btn btn-danger">Delete</a>
+							</div>
+						</td>
+					</tr>
+				}
+			}
+
+
+		</tbody>
+	</table>
+	<div class="container-buttons">
+		<a role="button" class="btn btn-primary" id="btn-criar" asp-action="Criar" asp-controller="Contato">Criar Contato único</a>
+		<div class="envio-arquivos">
+			<span>Enviar arquivo <b class="excel">excel</b> de multiplos contatos: </span>
+			<form asp-action="SendFile" asp-controller="SendFile" method="post" enctype="multipart/form-data">
+				<label for="btn-send-file" class="btn btn-primary input-file col-md-2 text-center">Procurar Arquivo</label>
+				<input id="btn-send-file" class="btn btn-success input-file col-md-2 text-center" name="uploadFile" type="file" multiple hidden />
+				<button class="btn btn-success col-md-2 input-file-btn" type="submit">Enviar</button>
+
+			</form>
+			@*<a role="button" class="btn btn-success"  asp-action="EnviarArquivo" asp-controller="EnviarArquivo">Buscar Arquivo</a>*@
+		</div>
 	</div>
 </div>

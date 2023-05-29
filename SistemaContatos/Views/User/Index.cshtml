@@ -4,12 +4,9 @@
 	ViewData["Title"] = "Lista de Contatos";
 }
 
-@*<div class="text-center">
-    <h1 class="display-4">Bem Vindo! @Model.Name</h1>
-    <p>E-mail: @Model.Email</p>
-</div>*@
+<div id="index-user">
 
-	<a role="button" class="btn btn-primary" id="btn-criar" asp-action="Criar" asp-controller="User">Criar novo usuário</a>
+
 
 	@if (TempData["SuccessMessage"] != null)
 	{
@@ -28,73 +25,69 @@
 
 	}
 
+		<table class="table table-striped" id="users-table">
+			<thead>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Sobrenome</th>
+					<th scope="col">Login</th>
+					<th scope="col">Email</th>
+					<th scope="col">Perfil</th>
+					<th scope="col">Contatos</th>
+					<th scope="col">Data do cadastro</th>
+					<th scope="col">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
 
-
-
-	
-
-	<table class="table table-striped" id="users-table">
-		<thead>
-			<tr>
-				<th scope="col">Id</th>
-				<th scope="col">Nome</th>
-				<th scope="col">Sobrenome</th>
-				<th scope="col">Login</th>
-				<th scope="col">Email</th>
-				<th scope="col">Perfil</th>
-				<th scope="col">Contatos</th>
-				<th scope="col">Data do cadastro</th>
-				<th scope="col">Actions</th>
-			</tr>
-		</thead>
-		<tbody>
-
-			@if (@Model != null && @Model.Any())
-			{
-
-
-				@foreach (UserModel user in Model)
+				@if (@Model != null && @Model.Any())
 				{
-					<tr>
-						<th scope="row">@user.Id.ToString().Substring(0,8)</th>
-						<td>@user.FirstName</td>
-						<td>@user.LastName</td>
-						<td>@user.Login</td>
-						<td>@user.Email</td>
-						<td>@(user.Perfil == @PerfilEnum.admin ? "Administrador" : "Padrão") </td>
-						<td>
-							<a href="javascript:" user-id="@user.Id" class="btn btn-secondary btn-sm btn-conctats">
-								@(user.Contatos != null && user.Contatos.Any() ? user.Contatos.Count() : 0)
-							</a>
-						</td>
-						<td>@user.RegistrationDate</td>
-						<td>
-							<div style="width:100%;" class="btn-group" role="group">
-								<a asp-route-id="@user.Id" asp-action="Editar" asp-controller="User" role="button" class="btn btn-primary">Edit</a>
-								<a asp-route-id="@user.Id" asp-action="ApagarConfirmacao" asp-controller="User" role="button" class="btn btn-danger">Delete</a>
-							</div>
-						</td>
-					</tr>
+
+
+					@foreach (UserModel user in Model)
+					{
+						<tr>
+							<th scope="row">@user.Id.ToString().Substring(0,8)</th>
+							<td>@user.FirstName</td>
+							<td>@user.LastName</td>
+							<td>@user.Login</td>
+							<td>@user.Email</td>
+							<td>@(user.Perfil == @PerfilEnum.admin ? "Administrador" : "Padrão") </td>
+							<td>
+								<a href="javascript:" user-id="@user.Id" class="btn btn-secondary btn-sm btn-conctats">
+									@(user.Contatos != null && user.Contatos.Any() ? user.Contatos.Count() : 0)
+								</a>
+							</td>
+							<td>@user.RegistrationDate</td>
+							<td>
+								<div style="width:100%;" class="btn-group" role="group">
+									<a asp-route-id="@user.Id" asp-action="Editar" asp-controller="User" role="button" class="btn btn-primary">Edit</a>
+									<a asp-route-id="@user.Id" asp-action="ApagarConfirmacao" asp-controller="User" role="button" class="btn btn-danger">Delete</a>
+								</div>
+							</td>
+						</tr>
+					}
 				}
-			}
 
-		</tbody>
-	</table>
+			</tbody>
+		</table>
+		<a role="button" class="btn btn-primary" id="btn-criar" asp-action="Criar" asp-controller="User">Criar novo usuário</a>
 
-	<div id="ContactsModal" class="modal" tabindex="-1">
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">Lista de Contatos</h5>
-					<button type="button" id="btn-modal-close" class="close" aria-label="Close" data-dismiss="modal">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<div id="userContactList">
-
+		<div id="ContactsModal" class="modal" tabindex="-1">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Lista de Contatos</h5>
+						<button type="button" id="btn-modal-close" class="close" aria-label="Close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div id="userContactList">
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+</div>
