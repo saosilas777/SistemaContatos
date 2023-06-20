@@ -62,6 +62,7 @@ select, select option {
     html{
         height:100%;
     }
+
     
     #content-body {
         position: relative;
@@ -250,6 +251,11 @@ select, select option {
         color:white;
         padding:40px;
     }
+        .login-content button {
+            display: flex;
+            width: 100%;
+            justify-content:center;
+        }
     .login-content a{
         text-decoration:none;
         color:#ffa400;
@@ -349,25 +355,51 @@ select, select option {
     .aside-content {
         display: none;
     }
+    #content-aside-text-login{
+        width:80%;
+    }
 
     #login-form {
-        width: 100vw;
-    }
-
-    #logout-page {
-        margin-top: 50%;
-        width: 100%;
         display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content: center;
-        color: #ffa400;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: #00192e;
+        color: white;
     }
+    .login-container{
+        display:flex;
+        justify-content:center;
+    }
+    
+        #login-form button {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            background-color: #2e2e2e;
+        }
+
+        #login-form a {
+            text-decoration: none;
+            color: #ffa400;
+        }
+
+        #logout-page {
+            margin-top: 50%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ffa400;
+        }
 
         #logout-page a {
             width: 50%;
             margin: 5px;
         }
+    
 
 }
 
