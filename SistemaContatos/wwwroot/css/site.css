@@ -1,23 +1,25 @@
 ﻿* {
     box-sizing: border-box;
+    margin:0;
+    padding:0;
 }
 
 html {
-    min-height: 100vh;
+    height:100%;
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-#content-body {
-    width: 100%;
-    height: 100vh;
+
+
+#header-nav {
+    background-color: #00192e;
 }
 
 #header-index {
     width: 100%;
     background-color: #757575;
-    border-bottom: 2px solid #ccc;
     padding: 10px;
     margin-bottom: 25px;
 }
@@ -33,16 +35,9 @@ html {
     margin-bottom: 15px;
     border: 2px solid #fff;
     border-radius: 50%;
-    outline: inset
+    
 }
 
-#footer {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    background-color: #353535;
-    color: white;
-}
 
 select, select option {
     background-color: #1f1f1f;
@@ -61,25 +56,27 @@ select, select option {
         border: none;
         font-size: 25px;
     }
-    main{
-        width:100%
-    }
 
-@media screen and (min-width:576px) {
+
+@media screen and (min-width:689px) {
+    html{
+        height:100%;
+    }
+    
     #content-body {
         position: relative;
-        min-width: 100%;
-        max-height: 100vh;
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: row;
     }
 
     #header-nav {
         width: 15%;
-        height: 100%;
-        background-color: #353535;
+        min-height: 100%;
         margin: 0;
         padding: 0;
+        background-color: #00192e;
     }
 
         #header-nav nav, #header-nav div {
@@ -123,10 +120,12 @@ select, select option {
         color: white;
         overflow: auto;
     }
-        
-
-        
-
+    main{
+        width:100%;
+    }
+    table td, table tr, table th{
+        color:white
+    }
 
     #users-table tr, #users-table th {
         text-align: center;
@@ -149,12 +148,15 @@ select, select option {
         }
 
     #footer {
-        width: 100%;
+        width: 85%;
+        position:absolute;
+        bottom:0;
+        right:0;
         min-height: 5%;
         display: flex;
         padding: 15px;
         flex-direction: row;
-        background-color: #353535;
+        background-color:#2e2e2e;
         color: white;
     }
 
@@ -167,12 +169,16 @@ select, select option {
         background-color: #353535;
         color: white;
         bottom: 0;
-        width: 60%;
+        width: 70%;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding:40px;
+    }
+    #content-aside-text{
+        width:50%;
     }
 
     .index-container > p {
@@ -203,53 +209,76 @@ select, select option {
     .add-contact {
         width: 100%;
     }
+
         .add-contact .btns {
             min-width: 100%;
             display: flex;
-            flex-direction:column;
+            flex-direction: column;
             justify-content: space-between;
-            
-
         }
+
             .add-contact .btns button, .add-contact .btns a {
                 width: 50%;
                 margin: 10px 0 0;
             }
-    #logout-page{
-        width:100%;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        color:#ffa400;
-        
+
+    #logout-page {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #ffa400;
     }
-    #logout-page a{
-        width:15%;
-        margin:5px;
+
+        #logout-page a {
+            width: 15%;
+            margin: 5px;
+        }
+   .login-form{
+       position:relative;
+   }
+    .login-content {
+        width:30%;
+        position:absolute;
+        right:0;
+        height:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color:#00192e;
+        color:white;
+        padding:40px;
+    }
+    .login-content a{
+        text-decoration:none;
+        color:#ffa400;
+        position:absolute;
+        margin:15px 0;
+        right:0;
     }
 }
 
-@media screen and (max-width:575px) {
+@media screen and (max-width:688px) {
+    html{
+       min-height:100vh;
+    }
 
     #content-body {
-        width: 100%;
-        height:100vh;
-        position: relative;
         background-color: #1f1f1f;
         color: white;
     }
 
     #body-content {
-        min-width: 100%;
-        height:fit-content;
-        min-height:100%;
+        min-height: 100vh;
+        height: fit-content;
+        position: relative;
         display: flex;
         flex-direction: column;
         background-color: #1f1f1f;
         color: white;
     }
-
-
+    
     .index-container {
         max-width: 100%;
     }
@@ -294,17 +323,27 @@ select, select option {
             align-items: center;
         }
 
+
     #users-table_wrapper {
         min-width: 100%;
         margin: 0;
         padding: 0;
     }
 
+    table td, table tr, table th {
+        color: white
+    }
+
     #footer {
+        margin:40px 0 0;
+        padding:0;
         width: 100%;
-        position: static;
-        padding: 15px 0 15px 10px;
+        height: 40px;
         color: white;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        background-color: #2e2e2e;
     }
 
     .aside-content {
@@ -314,6 +353,7 @@ select, select option {
     #login-form {
         width: 100vw;
     }
+
     #logout-page {
         margin-top: 50%;
         width: 100%;
@@ -328,105 +368,6 @@ select, select option {
             width: 50%;
             margin: 5px;
         }
+
 }
 
-.table, .table tbody, .table thead, .table tr, .table td, .table th {
-    color: white;
-}
-
-
-.login-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.login-form {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-    .login-form input {
-        width: 100%;
-        border: none;
-        color: #000;
-        font-family: sans-serif;
-        font-size: 16px;
-        font-weight: normal;
-        letter-spacing: .5px;
-        background-color: #FFF;
-        box-sizing: border-box;
-    }
-
-    .login-form button {
-        width: 100%;
-        padding: 10px;
-        border: none;
-        color: white;
-        font-weight: normal;
-        background-color: #192840
-    }
-
-        .login-form button:hover {
-            background-color: #2d3e59
-        }
-
-.login-content {
-    position: absolute;
-    width: 40%;
-    min-height: 100%;
-    justify-content: center;
-    align-items: center;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    background-color: #00192e;
-    color: white;
-}
-
-.content-recovery {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-    .content-recovery h4 {
-        position: absolute;
-        top: 200px;
-    }
-
-#forgoten-password {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    margin: 10px 0;
-}
-
-    #forgoten-password .btn-fgt-bk {
-        margin-top: 10px;
-        color: #000;
-    }
-
-    #forgoten-password a {
-        text-decoration: none;
-        color: #ffa400;
-        transition: all .5s;
-    }
-
-    #forgoten-password .RecoveryPassword:hover {
-        color: #fff;
-    }
-
-
-.small-tags {
-    color: red;
-}
-
-#content-aside-text {
-    width: 60%;
-}

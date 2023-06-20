@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,14 +14,14 @@
 </head>
 <body id="content-body">
     <header id="header-nav" >
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark  box-shadow mb-3">
             <div class="container-fluid">
               @await Component.InvokeAsync("Menu")
             </div>
         </nav>
     </header>
     <div id="body-content">
-        <main role="main" class="pb-3">
+        <main role="main" >
             @RenderBody()
         </main>
     </div>
@@ -32,8 +32,9 @@
     <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-    <footer id="footer">
-        &copy; 2023 - Sistema de Contatos
-    </footer>
+        <footer id="footer">
+            &copy; 2023 - Sistema de Contatos
+        </footer>
 </body>
+
 </html>
