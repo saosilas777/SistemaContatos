@@ -9,14 +9,14 @@ namespace SistemaContatos.Filters
 {
 	public class AdminLogged : ActionFilterAttribute
 	{
-		public override void OnActionExecuted(ActionExecutedContext context)
+		public override void OnActionExecuting(ActionExecutingContext context)
 		{
 			try
 			{
 				string? userSection = context.HttpContext.Session.GetString("Token");
 				if (userSection != null)
 				{
-					base.OnActionExecuted(context);
+					base.OnActionExecuting(context);
 				}	
 
 
@@ -38,12 +38,14 @@ namespace SistemaContatos.Filters
 						context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Restrict" }, { "action", "Index" } });
 					}
 				}
-				base.OnActionExecuted(context);
+				base.OnActionExecuting(context);
 			}
 			catch (Exception e)
 			{
 
-				throw new Exception(e.Message);
+				base.OnActionExecuting(context);
+
+
 			}
 			
 		}

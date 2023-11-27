@@ -1,4 +1,5 @@
 ﻿using SistemaContatos.Models;
+using SistemaContatos.Models.ViewModels;
 
 namespace SistemaContatos.Interfaces
 {

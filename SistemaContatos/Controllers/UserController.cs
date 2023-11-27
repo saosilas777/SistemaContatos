@@ -1,43 +1,57 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SistemaContatos.Filters;
+using SistemaContatos.Helper;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Models;
 using SistemaContatos.Repository;
+using SistemaContatos.Services;
 
 namespace SistemaContatos.Controllers
 {
 	
    
-	//[LoggedUser]
+	[LoggedUser]
 	public class UserController : Controller
     {
         private readonly IUserRepository _userRepository;
         private readonly IContatoRepository _contatoRepository;
+		private readonly ISection _section;
 
-        public UserController(IUserRepository userRepository, IContatoRepository contatoRepository)
+		public UserController(IUserRepository userRepository, IContatoRepository contatoRepository, ISection section)
         {
             _userRepository = userRepository;
             _contatoRepository = contatoRepository;
+            _section = section;
         }
-		//[AdminLogged]
+
+		[AdminLogged]
 		public IActionResult Index()
         {
+            
+				var token = _section.GetUserSection();
+                if (!TokenService.TokenIsValid(token))
+                {
+					_section.UserSectionRemove();
+					return RedirectToAction("Index", "Login");
+				} 
+				List<UserModel> user = _userRepository.BuscarTodos();
 
-            List<UserModel> user = _userRepository.BuscarTodos();
-            return View(user);
-        }
-		//[AdminLogged]
+				return View(user);
+			
+			
+		}
+		[AdminLogged]
 		public IActionResult Criar()
         {
             return View();
         }
-		//[AdminLogged]
+		[AdminLogged]
 		public IActionResult Editar(Guid id)
         {
             UserModel user = _userRepository.BuscarPorId(id);
             return View(user);
         }
-		//[AdminLogged]
+		[AdminLogged]
 		public IActionResult ApagarConfirmacao(Guid id)
         {
             var user = _userRepository.BuscarPorId(id);
@@ -50,7 +64,7 @@ namespace SistemaContatos.Controllers
             user.Id = id;
             return View(user);
         }
-		//[AdminLogged]
+		[AdminLogged]
 		public IActionResult ListarContatosPorUsuarioId(Guid id)
         {
             List<ContatoModel> contatos = _contatoRepository.BuscarTodos(id);
@@ -59,14 +73,14 @@ namespace SistemaContatos.Controllers
         }
 
 		[HttpPost]
-		//[AdminLogged]
+		[AdminLogged]
 		public IActionResult Apagar()
         {
             return View();
         }
 
         [HttpPost]
-		//[AdminLogged]
+		[AdminLogged]
 		public IActionResult Criar(UserModel user)
         {
             try
@@ -89,7 +103,7 @@ namespace SistemaContatos.Controllers
         }
 
         [HttpPost]
-		//[AdminLogged]
+		[AdminLogged]
 		public IActionResult Editar(UserModel user)
         {
             try
@@ -112,7 +126,7 @@ namespace SistemaContatos.Controllers
 
         }
         [HttpGet]
-		//[AdminLogged]
+		[AdminLogged]
 		public IActionResult Deletar(Guid id)
         {
             try

@@ -263,6 +263,28 @@ select, select option {
         margin:15px 0;
         right:0;
     }
+    a.btn-fgt-bk{
+       color:#2e2e2e;
+       width:50%;
+
+    }
+    #btn-login-entry {
+        margin: 18px 0 5px;
+    }
+    #restrictPage {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+    #btn-backpage {
+        position: static;
+        color: #ffa400;
+        font-weight: bold;
+        background-color: #353535;
+        border: 2px #4e4e4e solid;
+        width:60%;
+    }
 }
 
 @media screen and (max-width:688px) {
@@ -377,7 +399,7 @@ select, select option {
             display: flex;
             width: 100%;
             justify-content: center;
-            background-color: #2e2e2e;
+            
         }
 
         #login-form a {
@@ -399,7 +421,33 @@ select, select option {
             width: 50%;
             margin: 5px;
         }
-    
+    #forgoten-password a.btn-fgt-bk {
+        margin-top: 10px;
+        width: 50%;
+        color: #2e2e2e;
+    }
+    .RecoveryPassword{
+        height:50px;
+        margin-top:15px;
+    }
+    #btn-login-entry{
+        margin:18px 0;
+    }
+    #restrictPage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #btn-backpage {
+        position: static;
+        color: #ffa400;
+        font-weight: bold;
+        background-color: #353535;
+        border: 2px #4e4e4e solid;
+        width: 60%;
+    }
 
 }
 

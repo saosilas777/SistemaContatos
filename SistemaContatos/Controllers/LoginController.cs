@@ -15,8 +15,8 @@ namespace SistemaContatos.Controllers
 	public class LoginController : Controller
 	{
 		private readonly IUserRepository _userRepository;
-		private readonly ISection _section;
 		private readonly ISendEmail _mail;
+		private readonly ISection _section;
 
 
 
@@ -58,9 +58,10 @@ namespace SistemaContatos.Controllers
 				{
 					UserModel user = _userRepository.BuscarPorLogin(login._Login);
 
-					var authenticated = TokenService.Authenticate(user);
+					
 					if (user != null)
 					{
+						var authenticated = TokenService.Authenticate(user);
 						if (user.SenhaValida(login._Password))
 						{
 							if (authenticated.Result != null)

@@ -4,6 +4,7 @@ using OfficeOpenXml;
 using SistemaContatos.Helper;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Models;
+using SistemaContatos.Models.ViewModels;
 using SistemaContatos.Services.SendFileServices;
 using System.ComponentModel;
 using System.IO;

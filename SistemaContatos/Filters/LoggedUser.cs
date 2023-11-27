@@ -7,7 +7,7 @@ namespace SistemaContatos.Filters
 {
 	public class LoggedUser : ActionFilterAttribute
 	{
-		public override void OnActionExecuted(ActionExecutedContext context)
+		public override void OnActionExecuting(ActionExecutingContext context)
 		{
 			//mudar UserLoged para UserLogged
 			string? userSection = context.HttpContext.Session.GetString("Token");
@@ -23,7 +23,7 @@ namespace SistemaContatos.Filters
 			//		context.Result = new RedirectToRouteResult(new RouteValueDictionary { { "controller", "Login" }, { "action", "Login" } });
 			//	}
 			//}
-			base.OnActionExecuted(context);
+			base.OnActionExecuting(context);
 		}
 	}
 }

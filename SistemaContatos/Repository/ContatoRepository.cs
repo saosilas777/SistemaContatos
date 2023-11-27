@@ -2,6 +2,7 @@
 using SistemaContatos.Data;
 using SistemaContatos.Interfaces;
 using SistemaContatos.Models;
+using SistemaContatos.Models.ViewModels;
 
 namespace SistemaContatos.Repository
 {

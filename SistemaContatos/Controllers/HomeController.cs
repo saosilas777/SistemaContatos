@@ -13,7 +13,7 @@ using System.Text;
 
 namespace SistemaContatos.Controllers
 {
-	//[LoggedUser]
+	[LoggedUser]
 	public class HomeController : Controller
 	{
 
@@ -41,6 +41,7 @@ namespace SistemaContatos.Controllers
 		}
 		public IActionResult Privacy()
 		{
+			string token = _section.GetUserSection();
 			return View();
 		}
 
